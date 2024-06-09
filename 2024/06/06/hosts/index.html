@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>&#39;hosts&#39; | Hexo</title>
+  <meta name="keywords" content=" Linux学习 ">
+  <meta name="description" content="&#39;hosts&#39; | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;linuxbasic&#39;">
@@ -55,7 +55,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -382,18 +382,64 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-hosts" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WEB%E6%96%B9%E5%90%91%E5%AD%A6%E4%B9%A0"><span class="toc-text">WEB方向学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li></ol></li></ol>
+        <h1 class="article-title">&#39;hosts&#39;</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="linux基础文件">linux基础文件</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">Linux学习</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-06-09 19:11:05'>2024-06-06 20:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hosts%E6%96%87%E4%BB%B6%E6%A6%82%E8%BF%B0"><span class="toc-text">hosts文件概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%9A-etc-hosts"><span class="toc-text">在系统中的位置：&#x2F;etc&#x2F;hosts</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BD%9C%E7%94%A8"><span class="toc-text">文件作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8A%A0%E5%BF%AB%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="toc-text">1 加快域名解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9E%84%E5%BB%BA%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB"><span class="toc-text">2 构建映射关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B1%8F%E8%94%BD%E5%9E%83%E5%9C%BE%E7%BD%91%E7%AB%99"><span class="toc-text">3 屏蔽垃圾网站</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E4%BF%AE%E6%94%B9"><span class="toc-text">文件内容修改</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -406,22 +452,33 @@
     }
 </style>
 </div>
-            <h1 id="WEB方向学习"><a href="#WEB方向学习" class="headerlink" title="WEB方向学习"></a>WEB方向学习</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hosts文件概述"><a href="#hosts文件概述" class="headerlink" title="hosts文件概述"></a>hosts文件概述</h1><p>​	hosts文件是linux系统中负责ip地址与域名快速解析的文件，以ASCII格式保存在&#x2F;etc目录下，文件名为hosts，不同的linux版本，文件也可能不同，比如Debian的对应文件是&#x2F;etc&#x2F;hostname。hosts文件包含了ip地址和主机名之间的映射，包括主机名的别名，在没有域名服务器的情况下，系统上的所有网络程序都通过查询该文件来解析对应于某个主机名的ip地址，否则就需要使用DNS服务程序来解决。通常可以将常用的域名和ip地址映射加入到hosts文件中，实现快速方便的访问<br>     优先级：dns缓存&gt;hosts&gt;dns服务<br>     hosts：the static table lookup for host name（主机名查询静态表）</p>
+<h2 id="在系统中的位置：-etc-hosts"><a href="#在系统中的位置：-etc-hosts" class="headerlink" title="在系统中的位置：&#x2F;etc&#x2F;hosts"></a>在系统中的位置：&#x2F;etc&#x2F;hosts</h2><h1 id="文件作用"><a href="#文件作用" class="headerlink" title="文件作用"></a>文件作用</h1><h3 id="1-加快域名解析"><a href="#1-加快域名解析" class="headerlink" title="1 加快域名解析"></a>1 加快域名解析</h3><p>​	对于经常访问的网站，我们可以通过在hosts文件中配置域名和 IP 的映射关系，提高域名的解析速度。由于有了映射关系，当我们输入域名后，计算机就能够快速解析出 IP 地址，而不用请求网络上的 DNS 服务器。</p>
+<h3 id="2-构建映射关系"><a href="#2-构建映射关系" class="headerlink" title="2 构建映射关系"></a>2 构建映射关系</h3><p>​	在很多单位中，都会有自己局域网，而且还会有不同的服务器提供给公司的成员使用。但由于局域网中一般很少架设 DNS 服务器，因此在访问这些服务器时，就需要输入难记的 IP 地址，这对大家来说相当麻烦。因此，我们可以分别给这些服务器取个容易记住的名字，然后在hosts文件中建立 IP 映射，这样在以后访问的时候，只要输入这个服务器的名字就 OK 啦！</p>
+<h3 id="3-屏蔽垃圾网站"><a href="#3-屏蔽垃圾网站" class="headerlink" title="3 屏蔽垃圾网站"></a>3 屏蔽垃圾网站</h3><p>​	现在有很多网站，在不经过我们同意的时候，就将各种各样的插件安装到我们的计算机中，其中不乏病毒和木马。对于这些网站，我们就可以利用hosts文件把这些网站的域名映射到一个错误的 IP 或本地计算机的 IP 地址上，这样就可以达到禁止访问的目的了。</p>
+<h1 id="文件内容修改"><a href="#文件内容修改" class="headerlink" title="文件内容修改"></a>文件内容修改</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">202.108.22.5 www.baidu.com</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        
+<p>此时将202.108.22.5与百度域名建立联系</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -430,11 +487,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
