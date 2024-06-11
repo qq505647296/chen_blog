@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>linux的路径解释 | Hexo</title>
+  <meta name="keywords" content=" Linux学习 ">
+  <meta name="description" content="linux的路径解释 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="绝对路径与相对路径Linux中的路径可以分为绝对路径和相对路径，因为根据档名写法的不同，也可以将所谓的路径（path）定义为绝对路径（absolute）和相对路径（relative）。这两种文件名&#x2F;路径的写法根据是这样的：   绝对路径：由跟目录（&#x2F;）开始起的文件或者目录名称，例如 &#x2F;home&#x2F;dmtais&#x2F;.bashrc：   （绝对路径的写法一">
 <meta property="og:type" content="article">
@@ -57,7 +57,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -461,12 +461,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-path" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WEB%E6%96%B9%E5%90%91%E5%AD%A6%E4%B9%A0"><span class="toc-text">WEB方向学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li></ol></li></ol>
+        <h1 class="article-title">linux的路径解释</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="基础">基础</a> > 
+            
+            <a  data-rel="基础&lt;---&gt;概念">概念</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">Linux学习</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-06-11 13:20:32'>2024-06-11 13:05</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-text">绝对路径与相对路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8E%E4%B8%8A%E5%B1%82%E7%9B%AE%E5%BD%95"><span class="toc-text">当前目录与上层目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8E%E5%AE%B6%E7%9B%AE%E5%BD%95"><span class="toc-text">根目录与家目录</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -479,22 +527,32 @@
     }
 </style>
 </div>
-            <h1 id="WEB方向学习"><a href="#WEB方向学习" class="headerlink" title="WEB方向学习"></a>WEB方向学习</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="绝对路径与相对路径"><a href="#绝对路径与相对路径" class="headerlink" title="绝对路径与相对路径"></a>绝对路径与相对路径</h1><p>Linux中的路径可以分为绝对路径和相对路径，因为根据档名写法的不同，也可以将所谓的路径（path）定义为绝对路径（absolute）和相对路径（relative）。这两种文件名&#x2F;路径的写法根据是这样的：</p>
+<p>  绝对路径：由跟目录（&#x2F;）开始起的文件或者目录名称，例如 &#x2F;home&#x2F;dmtais&#x2F;.bashrc：   （绝对路径的写法一定是由 &#x2F; 目录写起的）<br>  相对路径：相对于目前路径的文件名写法。例如 .&#x2F;home&#x2F;dmtsai  或  ..&#x2F; ..&#x2F;home&#x2F;dmtsai  等。反正开头不是 &#x2F; 属于相对路径的写法。（相对路径的写法不是由 &#x2F; 目录写起的）.</p>
+<h1 id="当前目录与上层目录"><a href="#当前目录与上层目录" class="headerlink" title="当前目录与上层目录"></a>当前目录与上层目录</h1><p> .   ：代表当前的目录，也可以使用  .&#x2F;  来表示；<br> ..   ：代表上一层目录，也可以 ..&#x2F; 来表示；<br>这个 . 与 .. 目录的概念是很重要的，你经常看到  cd .. 或  .&#x2F;command 之类的指令下达方式，就是代表上一层与目前所在目录的工作状态，<br>例：如何先进入到&#x2F;var&#x2F;spool&#x2F;mail&#x2F;目录，在进入到&#x2F;var&#x2F;spool&#x2F;lpd&#x2F;目录内</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/spool/mail/            ##进入到/var/spool/mail/下</span><br><span class="line">cd ../lpd/                     ##返回上一层目录并进入lpd目录</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        
+<h1 id="根目录与家目录"><a href="#根目录与家目录" class="headerlink" title="根目录与家目录"></a>根目录与家目录</h1><p>&#x2F;“是根目录，”~“是家目录。<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Linux&spm=1001.2101.3001.7020">Linux</a>存储是以挂载的方式，相当于是树状的，源头就是”&#x2F;“，也就是根目录。而每个用户都有”家“目录，也就是用户的个人目录，比如root用户的”家“目录就是&#x2F;root,普通用户a的家目录就是&#x2F;home&#x2F;a。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -503,11 +561,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
