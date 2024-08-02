@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>bash转义符 | Hexo</title>
-  <meta name="keywords" content=" Linux学习 ">
-  <meta name="description" content="bash转义符 | Hexo">
+  <title>basic&#39; | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="basic&#39; | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="apt">
 <meta property="og:type" content="article">
@@ -591,36 +591,19 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-bash" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="&#39;ubuntu-ubuntubasic" class="article article-type-&#39;ubuntu" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">bash转义符</h1>
+        <h1 class="article-title">basic&#39;</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="bash学习">bash学习</a> > 
-            
-            <a  data-rel="bash学习&lt;---&gt;bash基础">bash基础</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color3">Linux学习</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-12 13:23:34'>2024-06-06 20:15</time>
+            发布时间 : <time class="date" title='最后更新: 2024-06-12 13:41:58'>2024-06-12 13:41</time>
         
     </div>
     <div class="article-meta">
@@ -642,7 +625,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#bash%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="toc-text">bash转义符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#b-%E8%BD%AC%E4%B9%89%E5%90%8E%E7%9B%B8%E5%BD%93%E4%BA%8E%E6%8C%89%E9%80%80%E6%A0%BC%E9%94%AE%EF%BC%88backspace%EF%BC%89-%E4%BD%86%E5%89%8D%E6%8F%90%E6%98%AF%E2%80%9D-b%E2%80%9D%E5%90%8E%E9%9D%A2%E5%AD%98%E5%9C%A8%E5%AD%97%E7%AC%A6%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E5%8F%82%E8%80%83%E4%B8%8B%E6%96%B9%E7%A4%BA%E4%BE%8B%E3%80%82"><span class="toc-text">\b 转义后相当于按退格键（backspace） ,但前提是”\b”后面存在字符，具体效果参考下方示例。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c-%E4%B8%8D%E6%8D%A2%E8%A1%8C%E8%BE%93%E5%87%BA%EF%BC%8C%E5%9C%A8%E2%80%9D-c%E2%80%9D%E5%90%8E%E9%9D%A2%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AD%97%E7%AC%A6%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E4%BD%9C%E7%94%A8%E7%9B%B8%E5%BD%93%E4%BA%8Eecho-n%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E5%8F%82%E8%80%83%E4%B8%8B%E6%96%B9%E7%A4%BA%E4%BE%8B%E3%80%82"><span class="toc-text">\c 不换行输出，在”\c”后面不存在字符的情况下，作用相当于echo -n，具体效果参考下方示例。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#n-%E6%8D%A2%E8%A1%8C"><span class="toc-text">\n 换行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#f-%E6%8D%A2%E8%A1%8C%EF%BC%8C%E4%BD%86%E6%98%AF%E6%8D%A2%E8%A1%8C%E5%90%8E%E7%9A%84%E6%96%B0%E8%A1%8C%E7%9A%84%E5%BC%80%E5%A4%B4%E4%BD%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E7%9D%80%E4%B8%8A%E4%B8%80%E8%A1%8C%E7%9A%84%E8%A1%8C%E5%B0%BE%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B%E7%A4%BA%E4%BE%8B%EF%BC%9B"><span class="toc-text">\f 换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-%E4%B8%8E-f%E7%9B%B8%E5%90%8C%EF%BC%9B"><span class="toc-text">\v 与\f相同；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#t-%E8%BD%AC%E4%BB%A5%E5%90%8E%E8%A1%A8%E7%A4%BA%E6%8F%92%E5%85%A5tab%EF%BC%8C%E5%8D%B3%E5%88%B6%E8%A1%A8%E7%AC%A6%EF%BC%9B"><span class="toc-text">\t 转以后表示插入tab，即制表符；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#r-%E5%85%89%E6%A0%87%E7%A7%BB%E8%87%B3%E8%A1%8C%E9%A6%96%EF%BC%8C%E4%BD%86%E4%B8%8D%E6%8D%A2%E8%A1%8C%EF%BC%8C%E7%9B%B8%E5%BD%93%E4%BA%8E%E4%BD%BF%E7%94%A8%E2%80%9D-r%E2%80%9D%E4%BB%A5%E5%90%8E%E7%9A%84%E5%AD%97%E7%AC%A6%E8%A6%86%E7%9B%96%E2%80%9D-r%E2%80%9D%E4%B9%8B%E5%89%8D%E5%90%8C%E7%AD%89%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%EF%BC%8C%E5%8F%AA%E7%9C%8B%E8%BF%99%E6%AE%B5%E6%96%87%E5%AD%97%E6%8F%8F%E8%BF%B0%E7%9A%84%E8%AF%9D%E5%8F%AF%E8%83%BD%E4%B8%8D%E5%AE%B9%E6%98%93%E7%90%86%E8%A7%A3%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B%E7%A4%BA%E4%BE%8B%EF%BC%9B"><span class="toc-text">\r 光标移至行首，但不换行，相当于使用”\r”以后的字符覆盖”\r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E6%8F%92%E5%85%A5%E2%80%9D-%E2%80%9D%E6%9C%AC%E8%BA%AB%EF%BC%9B"><span class="toc-text">\ 表示插入”\”本身；</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -658,15 +641,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="bash转义符"><a href="#bash转义符" class="headerlink" title="bash转义符"></a>bash转义符</h1><h5 id="b-转义后相当于按退格键（backspace）-但前提是”-b”后面存在字符，具体效果参考下方示例。"><a href="#b-转义后相当于按退格键（backspace）-但前提是”-b”后面存在字符，具体效果参考下方示例。" class="headerlink" title="\b 转义后相当于按退格键（backspace） ,但前提是”\b”后面存在字符，具体效果参考下方示例。"></a>\b 转义后相当于按退格键（backspace） ,但前提是”\b”后面存在字符，具体效果参考下方示例。</h5><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240612125205136.png" alt="image-20240612125205136"></p>
-<p>使用echo命令输出”\b”转义字符，在”\b”后面存在字符的前提下，”\b”表示删除前一个字符，”\b\b”表示删除前两个字符。</p>
-<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/aa034839ca70430cfd401e1eda824e54.png" alt="img"></p>
-<p>可以看到，上例中，在”\b”后面不存在任何字符时，”\b”并没有转义为”退格键”，当”\b”后面存在字符时，一个”\b”就相当于按一次backspace键。</p>
-<h5 id="c-不换行输出，在”-c”后面不存在字符的情况下，作用相当于echo-n，具体效果参考下方示例。"><a href="#c-不换行输出，在”-c”后面不存在字符的情况下，作用相当于echo-n，具体效果参考下方示例。" class="headerlink" title="\c 不换行输出，在”\c”后面不存在字符的情况下，作用相当于echo -n，具体效果参考下方示例。"></a>\c 不换行输出，在”\c”后面不存在字符的情况下，作用相当于echo -n，具体效果参考下方示例。</h5><p>我们也可以使用\c转义符，表示不换行输出，但是当”\c”后面仍然存在字符时，”\c”后面的字符将不会被输出，如果”\c”后面不存在任何字符时，效果与使用”echo -n”相同,示例如下。</p>
-<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/5c687f1ce2a96f3c10773b3f3e28438b.png" alt="img"></p>
-<h5 id="n-换行"><a href="#n-换行" class="headerlink" title="\n 换行"></a>\n 换行</h5><h5 id="f-换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；"><a href="#f-换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；" class="headerlink" title="\f 换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；"></a>\f 换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；</h5><h5 id="v-与-f相同；"><a href="#v-与-f相同；" class="headerlink" title="\v 与\f相同；"></a>\v 与\f相同；<img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/8bdaf5548e111445f5d29892a46c67f1.png" alt="img"></h5><h5 id="t-转以后表示插入tab，即制表符；"><a href="#t-转以后表示插入tab，即制表符；" class="headerlink" title="\t 转以后表示插入tab，即制表符；"></a>\t 转以后表示插入tab，即制表符；</h5><h5 id="r-光标移至行首，但不换行，相当于使用”-r”以后的字符覆盖”-r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；"><a href="#r-光标移至行首，但不换行，相当于使用”-r”以后的字符覆盖”-r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；" class="headerlink" title="\r 光标移至行首，但不换行，相当于使用”\r”以后的字符覆盖”\r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；"></a>\r 光标移至行首，但不换行，相当于使用”\r”以后的字符覆盖”\r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；</h5><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/df30498df135595b8032acf24f9d388e.png" alt="img"></p>
-<h5 id="表示插入”-”本身；"><a href="#表示插入”-”本身；" class="headerlink" title="\ 表示插入”\”本身；"></a>\ 表示插入”\”本身；</h5><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/2b83936518b2ae0fbcd22c65e29c8132.png" alt="img"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>

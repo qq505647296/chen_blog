@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>bash转义符 | Hexo</title>
+  <title>linux权限 | Hexo</title>
   <meta name="keywords" content=" Linux学习 ">
-  <meta name="description" content="bash转义符 | Hexo">
+  <meta name="description" content="linux权限 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="apt">
 <meta property="og:type" content="article">
@@ -591,9 +591,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-bash" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-permission" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">bash转义符</h1>
+        <h1 class="article-title">linux权限</h1>
     
     <div class="article-meta">
         
@@ -603,9 +603,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="bash学习">bash学习</a> > 
-            
-            <a  data-rel="bash学习&lt;---&gt;bash基础">bash基础</a>
+            <a  data-rel="linux通用命令">linux通用命令</a>
             
         </span>
         
@@ -620,7 +618,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-06-12 13:23:34'>2024-06-06 20:15</time>
+            发布时间 : <time class="date" title='最后更新: 2024-06-15 11:58:15'>2024-06-09 18:05</time>
         
     </div>
     <div class="article-meta">
@@ -642,7 +640,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#bash%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="toc-text">bash转义符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#b-%E8%BD%AC%E4%B9%89%E5%90%8E%E7%9B%B8%E5%BD%93%E4%BA%8E%E6%8C%89%E9%80%80%E6%A0%BC%E9%94%AE%EF%BC%88backspace%EF%BC%89-%E4%BD%86%E5%89%8D%E6%8F%90%E6%98%AF%E2%80%9D-b%E2%80%9D%E5%90%8E%E9%9D%A2%E5%AD%98%E5%9C%A8%E5%AD%97%E7%AC%A6%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E5%8F%82%E8%80%83%E4%B8%8B%E6%96%B9%E7%A4%BA%E4%BE%8B%E3%80%82"><span class="toc-text">\b 转义后相当于按退格键（backspace） ,但前提是”\b”后面存在字符，具体效果参考下方示例。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#c-%E4%B8%8D%E6%8D%A2%E8%A1%8C%E8%BE%93%E5%87%BA%EF%BC%8C%E5%9C%A8%E2%80%9D-c%E2%80%9D%E5%90%8E%E9%9D%A2%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AD%97%E7%AC%A6%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E4%BD%9C%E7%94%A8%E7%9B%B8%E5%BD%93%E4%BA%8Eecho-n%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E5%8F%82%E8%80%83%E4%B8%8B%E6%96%B9%E7%A4%BA%E4%BE%8B%E3%80%82"><span class="toc-text">\c 不换行输出，在”\c”后面不存在字符的情况下，作用相当于echo -n，具体效果参考下方示例。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#n-%E6%8D%A2%E8%A1%8C"><span class="toc-text">\n 换行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#f-%E6%8D%A2%E8%A1%8C%EF%BC%8C%E4%BD%86%E6%98%AF%E6%8D%A2%E8%A1%8C%E5%90%8E%E7%9A%84%E6%96%B0%E8%A1%8C%E7%9A%84%E5%BC%80%E5%A4%B4%E4%BD%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E7%9D%80%E4%B8%8A%E4%B8%80%E8%A1%8C%E7%9A%84%E8%A1%8C%E5%B0%BE%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B%E7%A4%BA%E4%BE%8B%EF%BC%9B"><span class="toc-text">\f 换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#v-%E4%B8%8E-f%E7%9B%B8%E5%90%8C%EF%BC%9B"><span class="toc-text">\v 与\f相同；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#t-%E8%BD%AC%E4%BB%A5%E5%90%8E%E8%A1%A8%E7%A4%BA%E6%8F%92%E5%85%A5tab%EF%BC%8C%E5%8D%B3%E5%88%B6%E8%A1%A8%E7%AC%A6%EF%BC%9B"><span class="toc-text">\t 转以后表示插入tab，即制表符；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#r-%E5%85%89%E6%A0%87%E7%A7%BB%E8%87%B3%E8%A1%8C%E9%A6%96%EF%BC%8C%E4%BD%86%E4%B8%8D%E6%8D%A2%E8%A1%8C%EF%BC%8C%E7%9B%B8%E5%BD%93%E4%BA%8E%E4%BD%BF%E7%94%A8%E2%80%9D-r%E2%80%9D%E4%BB%A5%E5%90%8E%E7%9A%84%E5%AD%97%E7%AC%A6%E8%A6%86%E7%9B%96%E2%80%9D-r%E2%80%9D%E4%B9%8B%E5%89%8D%E5%90%8C%E7%AD%89%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%EF%BC%8C%E5%8F%AA%E7%9C%8B%E8%BF%99%E6%AE%B5%E6%96%87%E5%AD%97%E6%8F%8F%E8%BF%B0%E7%9A%84%E8%AF%9D%E5%8F%AF%E8%83%BD%E4%B8%8D%E5%AE%B9%E6%98%93%E7%90%86%E8%A7%A3%EF%BC%8C%E5%85%B7%E4%BD%93%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B%E7%A4%BA%E4%BE%8B%EF%BC%9B"><span class="toc-text">\r 光标移至行首，但不换行，相当于使用”\r”以后的字符覆盖”\r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E6%8F%92%E5%85%A5%E2%80%9D-%E2%80%9D%E6%9C%AC%E8%BA%AB%EF%BC%9B"><span class="toc-text">\ 表示插入”\”本身；</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E6%9D%83%E9%99%90"><span class="toc-text">linux权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Shell%E5%91%BD%E4%BB%A4%E4%BB%A5%E5%8F%8A%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="toc-text">一、Shell命令以及运行原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Linux%E6%9D%83%E9%99%90%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">二、Linux权限的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Linux%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-text">三、Linux权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E8%80%85%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">1、文件访问者的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-text">2、文件类型和访问权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%80%BC%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-text">3、文件权限值的表示方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-text">4、目录的权限</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -658,15 +656,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="bash转义符"><a href="#bash转义符" class="headerlink" title="bash转义符"></a>bash转义符</h1><h5 id="b-转义后相当于按退格键（backspace）-但前提是”-b”后面存在字符，具体效果参考下方示例。"><a href="#b-转义后相当于按退格键（backspace）-但前提是”-b”后面存在字符，具体效果参考下方示例。" class="headerlink" title="\b 转义后相当于按退格键（backspace） ,但前提是”\b”后面存在字符，具体效果参考下方示例。"></a>\b 转义后相当于按退格键（backspace） ,但前提是”\b”后面存在字符，具体效果参考下方示例。</h5><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240612125205136.png" alt="image-20240612125205136"></p>
-<p>使用echo命令输出”\b”转义字符，在”\b”后面存在字符的前提下，”\b”表示删除前一个字符，”\b\b”表示删除前两个字符。</p>
-<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/aa034839ca70430cfd401e1eda824e54.png" alt="img"></p>
-<p>可以看到，上例中，在”\b”后面不存在任何字符时，”\b”并没有转义为”退格键”，当”\b”后面存在字符时，一个”\b”就相当于按一次backspace键。</p>
-<h5 id="c-不换行输出，在”-c”后面不存在字符的情况下，作用相当于echo-n，具体效果参考下方示例。"><a href="#c-不换行输出，在”-c”后面不存在字符的情况下，作用相当于echo-n，具体效果参考下方示例。" class="headerlink" title="\c 不换行输出，在”\c”后面不存在字符的情况下，作用相当于echo -n，具体效果参考下方示例。"></a>\c 不换行输出，在”\c”后面不存在字符的情况下，作用相当于echo -n，具体效果参考下方示例。</h5><p>我们也可以使用\c转义符，表示不换行输出，但是当”\c”后面仍然存在字符时，”\c”后面的字符将不会被输出，如果”\c”后面不存在任何字符时，效果与使用”echo -n”相同,示例如下。</p>
-<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/5c687f1ce2a96f3c10773b3f3e28438b.png" alt="img"></p>
-<h5 id="n-换行"><a href="#n-换行" class="headerlink" title="\n 换行"></a>\n 换行</h5><h5 id="f-换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；"><a href="#f-换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；" class="headerlink" title="\f 换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；"></a>\f 换行，但是换行后的新行的开头位置连接着上一行的行尾，具体效果查看示例；</h5><h5 id="v-与-f相同；"><a href="#v-与-f相同；" class="headerlink" title="\v 与\f相同；"></a>\v 与\f相同；<img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/8bdaf5548e111445f5d29892a46c67f1.png" alt="img"></h5><h5 id="t-转以后表示插入tab，即制表符；"><a href="#t-转以后表示插入tab，即制表符；" class="headerlink" title="\t 转以后表示插入tab，即制表符；"></a>\t 转以后表示插入tab，即制表符；</h5><h5 id="r-光标移至行首，但不换行，相当于使用”-r”以后的字符覆盖”-r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；"><a href="#r-光标移至行首，但不换行，相当于使用”-r”以后的字符覆盖”-r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；" class="headerlink" title="\r 光标移至行首，但不换行，相当于使用”\r”以后的字符覆盖”\r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；"></a>\r 光标移至行首，但不换行，相当于使用”\r”以后的字符覆盖”\r”之前同等长度的字符，只看这段文字描述的话可能不容易理解，具体效果查看示例；</h5><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/df30498df135595b8032acf24f9d388e.png" alt="img"></p>
-<h5 id="表示插入”-”本身；"><a href="#表示插入”-”本身；" class="headerlink" title="\ 表示插入”\”本身；"></a>\ 表示插入”\”本身；</h5><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/2b83936518b2ae0fbcd22c65e29c8132.png" alt="img"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+        <h1 id="linux权限"><a href="#linux权限" class="headerlink" title="linux权限"></a>linux权限</h1><p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E6%9D%83%E9%99%90"><span class="toc-text">linux权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Shell%E5%91%BD%E4%BB%A4%E4%BB%A5%E5%8F%8A%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="toc-text">一、Shell命令以及运行原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Linux%E6%9D%83%E9%99%90%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">二、Linux权限的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Linux%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-text">三、Linux权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E8%80%85%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">1、文件访问者的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-text">2、文件类型和访问权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%80%BC%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-text">3、文件权限值的表示方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-text">4、目录的权限</span></a></li></ol></li></ol></li></ol></div></p>
+<h1 id="一、Shell命令以及运行原理"><a href="#一、Shell命令以及运行原理" class="headerlink" title="一、Shell命令以及运行原理"></a>一、Shell命令以及运行原理</h1><h2 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h2><p>Linux严格意义上说的是一个操作系统，我们称之为“核心（kernel） “ ，但我们一般不能直接使用kernel，而是通过kernel的“外壳”程序（shell），来与kernel沟通 </p>
+<p>Shell（命令行解释器）的作用：</p>
+<ol>
+<li>操作系统的语言是机器语言，用户直接与操作系统沟通成本大，所以Shell将用户的命令翻译给核心（kernel）处理，并将核心的处理结果翻译给用户（提供良好的使用环境） </li>
+<li>面对用户的不合意请求，操作系统会拒绝请求，以此来保护操作系统</li>
+</ol>
+<p>Shell与bash：</p>
+<p> Shell是命令行解释器的统称，而bash的具体的一种命令行解释器</p>
+<h2 id="二、Linux权限的概念"><a href="#二、Linux权限的概念" class="headerlink" title="二、Linux权限的概念"></a>二、Linux权限的概念</h2><p>Linux下有两种用户：</p>
+<ol>
+<li>超级用户(root)：可以再linux系统下做任何事情，不受限制 </li>
+<li>普通用户：在linux下做有限的事情</li>
+</ol>
+<p> 注：超级用户的命令提示符是“#”，普通用户的命令提示符是“$” </p>
+<h2 id="三、Linux权限管理"><a href="#三、Linux权限管理" class="headerlink" title="三、Linux权限管理"></a>三、Linux权限管理</h2><h3 id="1、文件访问者的分类"><a href="#1、文件访问者的分类" class="headerlink" title="1、文件访问者的分类"></a>1、文件访问者的分类</h3><p>文件和文件目录的所有者： u—User 文件</p>
+<p>文件目录的所有者所在的组的用户： g—Group </p>
+<p>其它用户： o—Others </p>
+<p>注：group的意义是在保证文件安全的前提下，进行组内协同</p>
+<h3 id="2、文件类型和访问权限"><a href="#2、文件类型和访问权限" class="headerlink" title="2、文件类型和访问权限"></a>2、文件类型和访问权限</h3><p><img src="https://ask.qcloudimg.com/http-save/yehe-9645905/6ad38eeeb59e6d848498511452bd2784.png" alt="image-20220127162129941"></p>
+<img src="https://ask.qcloudimg.com/http-save/yehe-9645905/818beb33f4604672f59088c474f229ef.png" alt="image-20220127162809704" style="zoom: 200%;" />
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">d：文件夹</span><br><span class="line">-：普通文件</span><br><span class="line">l：软链接（类似Windows的快捷方式）</span><br><span class="line">b：块设备文件（例如硬盘、光驱等）</span><br><span class="line">p：管道文件</span><br><span class="line">c：字符设备文件（例如屏幕等串口设备）</span><br><span class="line">s：套接口文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">读（r）： Read对文件而言，具有读取文件内容的权限；对目录来说，具有浏览该目录信息的权限</span><br><span class="line">写（w）： Write对文件而言，具有修改文件内容的权限；对目录来说，具有删除移动目录内文件的权限</span><br><span class="line">执行（x）： execute对文件而言，具有执行文件的权限；对目录来说，具有进入目录的权限</span><br><span class="line">“—”：表示不具有该项权限  </span><br></pre></td></tr></table></figure>
+
+<h3 id="3、文件权限值的表示方法"><a href="#3、文件权限值的表示方法" class="headerlink" title="3、文件权限值的表示方法"></a>3、文件权限值的表示方法</h3><ul>
+<li>字符表示方法：</li>
+</ul>
+<p><img src="https://ask.qcloudimg.com/http-save/yehe-9645905/62eba2b6323856cf2a68404e66dab5b5.png" alt="image-20220127163150998"></p>
+<ul>
+<li>8进制数值表示法：<img src="https://ask.qcloudimg.com/http-save/yehe-9645905/5d56417d1b683e74189a1695ce7db2dc.png" alt="image-20220127163215643"></li>
+</ul>
+<h3 id="4、目录的权限"><a href="#4、目录的权限" class="headerlink" title="4、目录的权限"></a>4、目录的权限</h3><p> 可执行权限: 如果目录没有可执行权限, 则无法cd到目录中 可读权限: 如果目录没有可读权限, 则无法用ls等命令查看目录中的文件内容 可写权限: 如果目录没有可写权限, 则无法在目录中创建文件, 也无法在目录中删除文件 注：只要用户具有目录的写权限, 用户就可以删除目录中的文件, 而不论这个用户是否有这个文件的写 权限</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
