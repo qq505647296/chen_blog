@@ -551,6 +551,25 @@
     
     
     <entry>
+      <title>basic</title>
+      <link href="/2024/06/12/linux/ubuntu/ubuntubasic/"/>
+      <url>/2024/06/12/linux/ubuntu/ubuntubasic/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu命令</title>
       <link href="/2024/06/12/linux/ubuntu/Ubuntu/"/>
       <url>/2024/06/12/linux/ubuntu/Ubuntu/</url>
@@ -565,25 +584,6 @@
           <category> ubuntu </category>
           
       </categories>
-      
-      
-        <tags>
-            
-            <tag> ubuntu </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>basic</title>
-      <link href="/2024/06/12/linux/ubuntu/ubuntubasic/"/>
-      <url>/2024/06/12/linux/ubuntu/ubuntubasic/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
       
       
         <tags>
@@ -655,11 +655,11 @@
     
     
     <entry>
-      <title>shell基础</title>
-      <link href="/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7/shell/"/>
-      <url>/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7/shell/</url>
+      <title>profile系统环境配置</title>
+      <link href="/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6/profile/"/>
+      <url>/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6/profile/</url>
       
-        <content type="html"><![CDATA[<h1 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h1><p><strong>shell是一种应用程序，提供了一种界面，用户通过该界面访问操作系统内核的服务</strong></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><blockquote><p>图形界面shell(GUI shell)</p><p>命令行式shell(CLI shell)</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>​&#x2F;etc&#x2F;profile文件的改变会涉及到系统的环境。</p><p>　　Linux是一个多用户的<a href="http://lib.csdn.net/base/operatingsystem">操作系统</a>。每个用户登录系统后，都会有一个专用的运行环境。通常每个用户默认的环境都是相同的，这个默认环境实际上就是一组环境变量的定义。用户可以对自己的运行环境进行定制，其方法就是修改相应的系统环境变量。</p><p>　　常在&#x2F;etc&#x2F;profile文件中修改环境变量，在这里修改的内容是对所有用户起作用的。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure><p>​ 这句的意思就是，把$JAVA_HOME&#x2F;bin 和 $PATH设置为PATH环境变量，由于这里加上了原来的PATH，所以相当于在原来的PATH上增加了$JAVA_HOME&#x2F;bin 。</p><p>$ :指明变量</p><p>: :指明执行先后顺序</p>]]></content>
       
       
       <categories>
@@ -668,7 +668,7 @@
           
           <category> linux知识 </category>
           
-          <category> 基本特性 </category>
+          <category> 系统文件 </category>
           
       </categories>
       
@@ -684,11 +684,11 @@
     
     
     <entry>
-      <title>profile系统环境配置</title>
-      <link href="/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6/profile/"/>
-      <url>/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6/profile/</url>
+      <title>shell基础</title>
+      <link href="/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7/shell/"/>
+      <url>/2024/06/10/linux/linux%E7%9F%A5%E8%AF%86/%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7/shell/</url>
       
-        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>​&#x2F;etc&#x2F;profile文件的改变会涉及到系统的环境。</p><p>　　Linux是一个多用户的<a href="http://lib.csdn.net/base/operatingsystem">操作系统</a>。每个用户登录系统后，都会有一个专用的运行环境。通常每个用户默认的环境都是相同的，这个默认环境实际上就是一组环境变量的定义。用户可以对自己的运行环境进行定制，其方法就是修改相应的系统环境变量。</p><p>　　常在&#x2F;etc&#x2F;profile文件中修改环境变量，在这里修改的内容是对所有用户起作用的。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure><p>​ 这句的意思就是，把$JAVA_HOME&#x2F;bin 和 $PATH设置为PATH环境变量，由于这里加上了原来的PATH，所以相当于在原来的PATH上增加了$JAVA_HOME&#x2F;bin 。</p><p>$ :指明变量</p><p>: :指明执行先后顺序</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h1><p><strong>shell是一种应用程序，提供了一种界面，用户通过该界面访问操作系统内核的服务</strong></p><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><blockquote><p>图形界面shell(GUI shell)</p><p>命令行式shell(CLI shell)</p></blockquote>]]></content>
       
       
       <categories>
@@ -697,7 +697,7 @@
           
           <category> linux知识 </category>
           
-          <category> 系统文件 </category>
+          <category> 基本特性 </category>
           
       </categories>
       
@@ -920,33 +920,6 @@
     
     
     <entry>
-      <title>DNS安全</title>
-      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/DNS/"/>
-      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/DNS/</url>
-      
-        <content type="html"><![CDATA[<h2 id="两类攻击者"><a href="#两类攻击者" class="headerlink" title="两类攻击者"></a>两类攻击者</h2><p>被动攻击者(窃听者)：不会影响两者之间的通讯，只是想获取信息</p><p>主动攻击者：会干扰两者的通讯</p><h2 id="安全目标"><a href="#安全目标" class="headerlink" title="安全目标"></a>安全目标</h2><h3 id="CIA："><a href="#CIA：" class="headerlink" title="CIA："></a>CIA：</h3><p>C(confidentiality):即在有主被者攻击情况下，无法获得网络中的内容</p><p>I(Integrity):攻击者无法篡改网络通信的内容</p><p>A(Authentication):通信双方是正确的主题</p><h1 id="针对域名系统的攻击"><a href="#针对域名系统的攻击" class="headerlink" title="针对域名系统的攻击"></a>针对域名系统的攻击</h1><p><strong>1、输入url地址时，浏览器会询问本地的域名解析器</strong></p><p><strong>2.本地域名解析器会询问根根域名解析器</strong></p><p><strong>3.根域名解析器会返回org服务器域名解析器的相应地址</strong></p><p><strong>4.本地域名解析器会根据地址找到.org域名服务器询问</strong></p><p><strong>5..org域名服务器会返回域名服务器地址</strong></p><p><strong>6.本地域名解析器再根据该地址寻找所需服务器</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">缓存--&gt;|直接查询|本地域名解析器</span><br><span class="line">    电脑 ---&gt; 本地域名解析器   </span><br><span class="line">    本地域名解析器--&gt;|记录|缓存</span><br><span class="line">    本地域名解析器--&gt;根域名解析器</span><br><span class="line">    根域名解析器--&gt;|.org服务器地址 NS xxx.xx.xxx.xx|本地域名解析器</span><br><span class="line">    本地域名解析器--&gt;.org域名解析器</span><br><span class="line">    .org域名解析器--&gt;|域名服务器地址 NS xxx.xx.xxx.xx|本地域名解析器</span><br><span class="line">    本地域名解析器--&gt;域名服务器</span><br><span class="line">    域名服务器--&gt;|A www=xxx.xx.xxx.xx|本地域名解析器</span><br><span class="line">    </span><br></pre></td></tr></table></figure><p>NS服务器记录：由根目录和.org服务器提供的ip地址</p><p>地址记录：由域名服务器返回的</p><h2 id="攻击方向"><a href="#攻击方向" class="headerlink" title="攻击方向"></a>攻击方向</h2><p><strong>一、对查询过程的信息干扰</strong></p><p><strong>二、入侵域名服务器</strong></p><p><strong>三、DNS缓存攻击（对QID）</strong></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> web安全 </category>
-          
-          <category> 基础协议 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 协议安全 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>密码学</title>
       <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%AF%86%E7%A0%81%E5%AD%A6/crypto/"/>
       <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%AF%86%E7%A0%81%E5%AD%A6/crypto/</url>
@@ -974,11 +947,11 @@
     
     
     <entry>
-      <title>https安全</title>
-      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/https/"/>
-      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/https/</url>
+      <title>DNS安全</title>
+      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/DNS/"/>
+      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/DNS/</url>
       
-        <content type="html"><![CDATA[<h1 id="https安全协议的原理机制"><a href="#https安全协议的原理机制" class="headerlink" title="https安全协议的原理机制"></a>https安全协议的原理机制</h1><h2 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h2><blockquote><p><strong>1.密钥组件的协商阶段</strong></p><p><strong>2.进一步进行密钥交换，建立安全通讯</strong></p><p><strong>3.再一次建立，重新协商</strong></p></blockquote><h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"></span><br><span class="line">client-&gt;&gt;Server:SYN</span><br><span class="line">Server-&gt;&gt;client:SYN/ACK</span><br><span class="line">client-&gt;&gt;Server:ACK</span><br><span class="line">client-&gt;&gt;Server:CLIENT HELLO</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="两类攻击者"><a href="#两类攻击者" class="headerlink" title="两类攻击者"></a>两类攻击者</h2><p>被动攻击者(窃听者)：不会影响两者之间的通讯，只是想获取信息</p><p>主动攻击者：会干扰两者的通讯</p><h2 id="安全目标"><a href="#安全目标" class="headerlink" title="安全目标"></a>安全目标</h2><h3 id="CIA："><a href="#CIA：" class="headerlink" title="CIA："></a>CIA：</h3><p>C(confidentiality):即在有主被者攻击情况下，无法获得网络中的内容</p><p>I(Integrity):攻击者无法篡改网络通信的内容</p><p>A(Authentication):通信双方是正确的主题</p><h1 id="针对域名系统的攻击"><a href="#针对域名系统的攻击" class="headerlink" title="针对域名系统的攻击"></a>针对域名系统的攻击</h1><p><strong>1、输入url地址时，浏览器会询问本地的域名解析器</strong></p><p><strong>2.本地域名解析器会询问根根域名解析器</strong></p><p><strong>3.根域名解析器会返回org服务器域名解析器的相应地址</strong></p><p><strong>4.本地域名解析器会根据地址找到.org域名服务器询问</strong></p><p><strong>5..org域名服务器会返回域名服务器地址</strong></p><p><strong>6.本地域名解析器再根据该地址寻找所需服务器</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">缓存--&gt;|直接查询|本地域名解析器</span><br><span class="line">    电脑 ---&gt; 本地域名解析器   </span><br><span class="line">    本地域名解析器--&gt;|记录|缓存</span><br><span class="line">    本地域名解析器--&gt;根域名解析器</span><br><span class="line">    根域名解析器--&gt;|.org服务器地址 NS xxx.xx.xxx.xx|本地域名解析器</span><br><span class="line">    本地域名解析器--&gt;.org域名解析器</span><br><span class="line">    .org域名解析器--&gt;|域名服务器地址 NS xxx.xx.xxx.xx|本地域名解析器</span><br><span class="line">    本地域名解析器--&gt;域名服务器</span><br><span class="line">    域名服务器--&gt;|A www=xxx.xx.xxx.xx|本地域名解析器</span><br><span class="line">    </span><br></pre></td></tr></table></figure><p>NS服务器记录：由根目录和.org服务器提供的ip地址</p><p>地址记录：由域名服务器返回的</p><h2 id="攻击方向"><a href="#攻击方向" class="headerlink" title="攻击方向"></a>攻击方向</h2><p><strong>一、对查询过程的信息干扰</strong></p><p><strong>二、入侵域名服务器</strong></p><p><strong>三、DNS缓存攻击（对QID）</strong></p>]]></content>
       
       
       <categories>
@@ -1028,34 +1001,38 @@
     
     
     <entry>
-      <title>URI/URL基础</title>
-      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web-basic/"/>
-      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web-basic/</url>
+      <title>https安全</title>
+      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/https/"/>
+      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%9F%BA%E7%A1%80%E5%8D%8F%E8%AE%AE/https/</url>
       
-        <content type="html"><![CDATA[<h1 id="URI-VS-URL"><a href="#URI-VS-URL" class="headerlink" title="URI VS URL"></a>URI VS URL</h1><p>在web中每次请求的目标叫一个资源，可以有照片、视频等</p><p>URI：在文本中都有一个统一标识符确定，这个标识符称为统一资源标识符，是一组字符串</p><p>URL：最常用的uri形式，统一资源定位符，也叫web地址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.buaa.edu.cn:443/~user/add.php?q=x&amp;user=m</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="https安全协议的原理机制"><a href="#https安全协议的原理机制" class="headerlink" title="https安全协议的原理机制"></a>https安全协议的原理机制</h1><h2 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h2><blockquote><p><strong>1.密钥组件的协商阶段</strong></p><p><strong>2.进一步进行密钥交换，建立安全通讯</strong></p><p><strong>3.再一次建立，重新协商</strong></p></blockquote><h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line"></span><br><span class="line">client-&gt;&gt;Server:SYN</span><br><span class="line">Server-&gt;&gt;client:SYN/ACK</span><br><span class="line">client-&gt;&gt;Server:ACK</span><br><span class="line">client-&gt;&gt;Server:CLIENT HELLO</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
           
-          <category> 信息收集 </category>
-          
           <category> web安全 </category>
           
-          <category> 嗅探 </category>
+          <category> 基础协议 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 协议安全 </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>搜索引擎</title>
-      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web/"/>
-      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web/</url>
+      <title>URI/URL基础</title>
+      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web-basic/"/>
+      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web-basic/</url>
       
-        <content type="html"><![CDATA[<p>[toc]</p><h1 id="一、利用搜索引擎收集信息"><a href="#一、利用搜索引擎收集信息" class="headerlink" title="一、利用搜索引擎收集信息"></a>一、利用搜索引擎收集信息</h1><h2 id="1-利用谷歌引擎搜索"><a href="#1-利用谷歌引擎搜索" class="headerlink" title="1.利用谷歌引擎搜索"></a>1.利用谷歌引擎搜索</h2><p>可以通过特定语法，查询内容丰富的信息，或查到远程服务器的一些敏感信息，造成信息泄露</p><h3 id="常用语法："><a href="#常用语法：" class="headerlink" title="常用语法："></a>常用语法：</h3><h4 id="1-intitle-关键字"><a href="#1-intitle-关键字" class="headerlink" title="(1)intitle:关键字:"></a>(1)intitle:关键字:</h4><ul><li><p><strong>语法含义：搜索网页标题中包含关键字的网页</strong>*</p></li><li><p>若查询一个以上关键字，用”allintitle”代替”intitle”</p></li></ul><h4 id="2-inurl-关键字"><a href="#2-inurl-关键字" class="headerlink" title="(2)inurl:关键字:"></a>(2)inurl:关键字:</h4><ul><li><strong>语法含义：搜索URL中包含关键字的网页</strong></li><li>若查询一个以上关键字，用”allinurl”代替”inurl”</li></ul><h4 id="3-site-关键字"><a href="#3-site-关键字" class="headerlink" title="(3)site:关键字:"></a>(3)site:关键字:</h4><ul><li><strong>语法含义：在指定的站点搜索</strong></li></ul><p>如：联系方式 site:souhu.com</p><h4 id="4-filetype-关键字"><a href="#4-filetype-关键字" class="headerlink" title="(4)filetype:关键字:"></a>(4)filetype:关键字:</h4><ul><li><strong>语法含义：搜索指定类型的文件，如doc、pdf</strong></li></ul><h4 id="5-intext-关键字"><a href="#5-intext-关键字" class="headerlink" title="(5)intext:关键字:"></a>(5)intext:关键字:</h4><ul><li><strong>语法含义：搜索网页网页正文中出现指定关键字的页面</strong></li></ul><h4 id="6-cache-关键字"><a href="#6-cache-关键字" class="headerlink" title="(6)cache:关键字:"></a>(6)cache:关键字:</h4><ul><li><strong>语法含义：指定在搜索引擎缓存中搜索</strong></li></ul><h4 id="7-link-关键字"><a href="#7-link-关键字" class="headerlink" title="(7)link:关键字:"></a>(7)link:关键字:</h4><ul><li><strong>语法含义：返回所有链接到某个url地址的网页</strong></li></ul><h2 id="2-利用Shodan引擎搜索"><a href="#2-利用Shodan引擎搜索" class="headerlink" title="2.利用Shodan引擎搜索"></a>2.利用Shodan引擎搜索</h2><p>主要用于查找在线存在的特定设备和设备类型，如服务器、路由器、交换机、物联网设备和工控设备等，提供在全世界范围内的所有设备，范围非常广泛</p><h4 id="1-webcam-展示所有网络存在的摄像头"><a href="#1-webcam-展示所有网络存在的摄像头" class="headerlink" title="(1)webcam:展示所有网络存在的摄像头"></a>(1)webcam:展示所有网络存在的摄像头</h4><h4 id="2-cisco-显示世界上所有的cisco网络设备"><a href="#2-cisco-显示世界上所有的cisco网络设备" class="headerlink" title="(2)cisco:显示世界上所有的cisco网络设备"></a>(2)cisco:显示世界上所有的cisco网络设备</h4><h4 id="3-port-显示开放终端的远程设备"><a href="#3-port-显示开放终端的远程设备" class="headerlink" title="(3)port:显示开放终端的远程设备"></a>(3)port:显示开放终端的远程设备</h4><h4 id="4-hostname-搜索出所有和该名称相关的终端设备"><a href="#4-hostname-搜索出所有和该名称相关的终端设备" class="headerlink" title="(4)hostname:搜索出所有和该名称相关的终端设备"></a>(4)hostname:搜索出所有和该名称相关的终端设备</h4><h4 id="5-telnet-搜索安装telnet服务的终端信息"><a href="#5-telnet-搜索安装telnet服务的终端信息" class="headerlink" title="(5)telnet:搜索安装telnet服务的终端信息"></a>(5)telnet:搜索安装telnet服务的终端信息</h4><h1 id="二、利用ip地址查询"><a href="#二、利用ip地址查询" class="headerlink" title="二、利用ip地址查询"></a>二、利用ip地址查询</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="URI-VS-URL"><a href="#URI-VS-URL" class="headerlink" title="URI VS URL"></a>URI VS URL</h1><p>在web中每次请求的目标叫一个资源，可以有照片、视频等</p><p>URI：在文本中都有一个统一标识符确定，这个标识符称为统一资源标识符，是一组字符串</p><p>URL：最常用的uri形式，统一资源定位符，也叫web地址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.buaa.edu.cn:443/~user/add.php?q=x&amp;user=m</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -1084,6 +1061,29 @@
       <categories>
           
           <category> 网络嗅探 </category>
+          
+          <category> web安全 </category>
+          
+          <category> 嗅探 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搜索引擎</title>
+      <link href="/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web/"/>
+      <url>/2024/06/01/web%E5%AE%89%E5%85%A8/%E5%97%85%E6%8E%A2/web/</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><h1 id="一、利用搜索引擎收集信息"><a href="#一、利用搜索引擎收集信息" class="headerlink" title="一、利用搜索引擎收集信息"></a>一、利用搜索引擎收集信息</h1><h2 id="1-利用谷歌引擎搜索"><a href="#1-利用谷歌引擎搜索" class="headerlink" title="1.利用谷歌引擎搜索"></a>1.利用谷歌引擎搜索</h2><p>可以通过特定语法，查询内容丰富的信息，或查到远程服务器的一些敏感信息，造成信息泄露</p><h3 id="常用语法："><a href="#常用语法：" class="headerlink" title="常用语法："></a>常用语法：</h3><h4 id="1-intitle-关键字"><a href="#1-intitle-关键字" class="headerlink" title="(1)intitle:关键字:"></a>(1)intitle:关键字:</h4><ul><li><p><strong>语法含义：搜索网页标题中包含关键字的网页</strong>*</p></li><li><p>若查询一个以上关键字，用”allintitle”代替”intitle”</p></li></ul><h4 id="2-inurl-关键字"><a href="#2-inurl-关键字" class="headerlink" title="(2)inurl:关键字:"></a>(2)inurl:关键字:</h4><ul><li><strong>语法含义：搜索URL中包含关键字的网页</strong></li><li>若查询一个以上关键字，用”allinurl”代替”inurl”</li></ul><h4 id="3-site-关键字"><a href="#3-site-关键字" class="headerlink" title="(3)site:关键字:"></a>(3)site:关键字:</h4><ul><li><strong>语法含义：在指定的站点搜索</strong></li></ul><p>如：联系方式 site:souhu.com</p><h4 id="4-filetype-关键字"><a href="#4-filetype-关键字" class="headerlink" title="(4)filetype:关键字:"></a>(4)filetype:关键字:</h4><ul><li><strong>语法含义：搜索指定类型的文件，如doc、pdf</strong></li></ul><h4 id="5-intext-关键字"><a href="#5-intext-关键字" class="headerlink" title="(5)intext:关键字:"></a>(5)intext:关键字:</h4><ul><li><strong>语法含义：搜索网页网页正文中出现指定关键字的页面</strong></li></ul><h4 id="6-cache-关键字"><a href="#6-cache-关键字" class="headerlink" title="(6)cache:关键字:"></a>(6)cache:关键字:</h4><ul><li><strong>语法含义：指定在搜索引擎缓存中搜索</strong></li></ul><h4 id="7-link-关键字"><a href="#7-link-关键字" class="headerlink" title="(7)link:关键字:"></a>(7)link:关键字:</h4><ul><li><strong>语法含义：返回所有链接到某个url地址的网页</strong></li></ul><h2 id="2-利用Shodan引擎搜索"><a href="#2-利用Shodan引擎搜索" class="headerlink" title="2.利用Shodan引擎搜索"></a>2.利用Shodan引擎搜索</h2><p>主要用于查找在线存在的特定设备和设备类型，如服务器、路由器、交换机、物联网设备和工控设备等，提供在全世界范围内的所有设备，范围非常广泛</p><h4 id="1-webcam-展示所有网络存在的摄像头"><a href="#1-webcam-展示所有网络存在的摄像头" class="headerlink" title="(1)webcam:展示所有网络存在的摄像头"></a>(1)webcam:展示所有网络存在的摄像头</h4><h4 id="2-cisco-显示世界上所有的cisco网络设备"><a href="#2-cisco-显示世界上所有的cisco网络设备" class="headerlink" title="(2)cisco:显示世界上所有的cisco网络设备"></a>(2)cisco:显示世界上所有的cisco网络设备</h4><h4 id="3-port-显示开放终端的远程设备"><a href="#3-port-显示开放终端的远程设备" class="headerlink" title="(3)port:显示开放终端的远程设备"></a>(3)port:显示开放终端的远程设备</h4><h4 id="4-hostname-搜索出所有和该名称相关的终端设备"><a href="#4-hostname-搜索出所有和该名称相关的终端设备" class="headerlink" title="(4)hostname:搜索出所有和该名称相关的终端设备"></a>(4)hostname:搜索出所有和该名称相关的终端设备</h4><h4 id="5-telnet-搜索安装telnet服务的终端信息"><a href="#5-telnet-搜索安装telnet服务的终端信息" class="headerlink" title="(5)telnet:搜索安装telnet服务的终端信息"></a>(5)telnet:搜索安装telnet服务的终端信息</h4><h1 id="二、利用ip地址查询"><a href="#二、利用ip地址查询" class="headerlink" title="二、利用ip地址查询"></a>二、利用ip地址查询</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 信息收集 </category>
           
           <category> web安全 </category>
           
