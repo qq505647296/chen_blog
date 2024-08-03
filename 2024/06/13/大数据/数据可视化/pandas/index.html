@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>pandas | 小chen妙妙屋</title><meta name="author" content="小chen"><meta name="copyright" content="小chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="pandas库介绍[TOC] 概述numpy在向量化计算中表现优异，但在处理更灵活、更复杂的数据中则相对较差。  基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具  功能 表格操作 基本操作：表格创建、查询、修改等 进阶操作：表格排序、索引转换、可视化等   透视表：分组、聚合、重塑(用于离散数据分析) 离散化和分位数分析(连续数据离散化后分析)  数据载入 csv:文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pandas">
+<meta property="og:url" content="http://example.com/2024/06/13/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/pandas/index.html">
+<meta property="og:site_name" content="小chen妙妙屋">
+<meta property="og:description" content="pandas库介绍[TOC] 概述numpy在向量化计算中表现优异，但在处理更灵活、更复杂的数据中则相对较差。  基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具  功能 表格操作 基本操作：表格创建、查询、修改等 进阶操作：表格排序、索引转换、可视化等   透视表：分组、聚合、重塑(用于离散数据分析) 离散化和分位数分析(连续数据离散化后分析)  数据载入 csv:文件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-06-13T04:15:55.000Z">
+<meta property="article:modified_time" content="2024-08-03T04:36:06.110Z">
+<meta property="article:author" content="小chen">
+<meta property="article:tag" content="python库">
+<meta property="article:tag" content="数据可视化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/06/13/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/pandas/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'pandas',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-03 12:36:06'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/styles/main.css"><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">36</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://api.chenjichao.site/api.php?category=pixiv')"><nav id="nav"><span id="blog-info"><a href="/" title="小chen妙妙屋"><img class="site-icon" src="/img%5Coutput.png"/><span class="site-name">小chen妙妙屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">pandas</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-13T04:15:55.000Z" title="发表于 2024-06-13 12:15:55">2024-06-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-03T04:36:06.110Z" title="更新于 2024-08-03 12:36:06">2024-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="pandas"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="pandas库介绍"><a href="#pandas库介绍" class="headerlink" title="pandas库介绍"></a>pandas库介绍</h1><p>[TOC]</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>numpy在向量化计算中表现优异，但在处理更灵活、更复杂的数据中则相对较差。</p>
+<ul>
+<li><h5 id="基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具"><a href="#基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具" class="headerlink" title="基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具"></a>基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具</h5></li>
+</ul>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li><strong>表格操作</strong><ul>
+<li>基本操作：表格创建、查询、修改等</li>
+<li>进阶操作：表格排序、索引转换、可视化等</li>
+</ul>
+</li>
+<li><strong>透视表</strong>：分组、聚合、重塑(用于离散数据分析)</li>
+<li><strong>离散化和分位数分析</strong>(连续数据离散化后分析)</li>
+</ul>
+<h3 id="数据载入"><a href="#数据载入" class="headerlink" title="数据载入"></a>数据载入</h3><ul>
+<li>csv:文件后缀.csv<ul>
+<li>一种文本格式表格，默认用分号</li>
+<li>如果表格内数据有逗号，应该用双引号包裹</li>
+</ul>
+</li>
+<li>Excel:文件后缀.xlsx微软office办公</li>
+</ul>
+<h2 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h2><h3 id="一、Pandas-Series对象"><a href="#一、Pandas-Series对象" class="headerlink" title="一、Pandas Series对象"></a>一、Pandas Series对象</h3><blockquote>
+<p> <strong>series是带标签数据的一堆数组</strong></p>
+</blockquote>
+<h4 id="series对象的创建"><a href="#series对象的创建" class="headerlink" title="series对象的创建"></a>series对象的创建</h4><h5 id="通用结构："><a href="#通用结构：" class="headerlink" title="通用结构："></a>通用结构：</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Serives(data、index=index、dtype=dtype)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>data:数据、可以是列表、字典或Numpy数组</p>
+<p>index:索引，为可选参数</p>
+<p>dtype:数据类型，为可选参数</p>
+</blockquote>
+<h4 id="1-用列表创建"><a href="#1-用列表创建" class="headerlink" title="1.用列表创建"></a>1.用列表创建</h4><h5 id="1-缺少index时，默认为整数序列"><a href="#1-缺少index时，默认为整数序列" class="headerlink" title="1.缺少index时，默认为整数序列"></a>1.缺少index时，默认为整数序列</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613155458265.png" alt="image-20240613155458265"></p>
+<h5 id="2-添加index时"><a href="#2-添加index时" class="headerlink" title="2.添加index时"></a>2.添加index时</h5><blockquote>
+<p>行索引是Index对象</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.Series([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613155704553.png" alt="image-20240613155704553"></p>
+<h6 id="注意：可以设置多个数据类型"><a href="#注意：可以设置多个数据类型" class="headerlink" title="注意：可以设置多个数据类型"></a>注意：可以设置多个数据类型</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.Series([<span class="number">1</span>, <span class="string">&#x27;2&#x27;</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613160234271.png" alt="image-20240613160234271"></p>
+<h5 id="3-强制改变数据类型"><a href="#3-强制改变数据类型" class="headerlink" title="3.强制改变数据类型"></a>3.强制改变数据类型</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data = pd.Series([<span class="number">1</span>, <span class="string">&#x27;2&#x27;</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], index=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>],dtype=<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613160349746.png" alt="image-20240613160349746"></p>
+<h4 id="2-用numpy数组创建"><a href="#2-用numpy数组创建" class="headerlink" title="2.用numpy数组创建"></a>2.用numpy数组创建</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">5</span>)</span><br><span class="line">data = pd.Series(x)</span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613160830445.png" alt="image-20240613160830445"></p>
+<h4 id="3-用字典创建"><a href="#3-用字典创建" class="headerlink" title="3.用字典创建"></a>3.用字典创建</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">population = &#123;</span><br><span class="line">    <span class="string">&#x27;Beijing&#x27;</span>:<span class="number">2156</span></span><br><span class="line">    ,<span class="string">&#x27;Chongqing&#x27;</span>:<span class="number">2182</span></span><br><span class="line">    ,<span class="string">&#x27;shanghai&#x27;</span>:<span class="number">2182</span></span><br><span class="line">&#125;</span><br><span class="line">population = pd.Series(population)</span><br><span class="line"><span class="built_in">print</span>(population)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613161144078.png" alt="image-20240613161144078"></p>
+<h6 id="注：此时也可以使用index，当字典存在会帅选，不存在则显示NaN"><a href="#注：此时也可以使用index，当字典存在会帅选，不存在则显示NaN" class="headerlink" title="注：此时也可以使用index，当字典存在会帅选，不存在则显示NaN"></a>注：此时也可以使用index，当字典存在会帅选，不存在则显示NaN</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">population = &#123;</span><br><span class="line">    <span class="string">&#x27;Beijing&#x27;</span>:<span class="number">2156</span></span><br><span class="line">    ,<span class="string">&#x27;Chongqing&#x27;</span>:<span class="number">2182</span></span><br><span class="line">    ,<span class="string">&#x27;shanghai&#x27;</span>:<span class="number">2182</span></span><br><span class="line">&#125;</span><br><span class="line">population = pd.Series(population, index=[<span class="string">&#x27;Beijing&#x27;</span>,<span class="string">&#x27;Chongqing&#x27;</span>,<span class="string">&#x27;shanghai&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(population)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613161412897.png" alt="image-20240613161412897"></p>
+<h4 id="4-data为标量时"><a href="#4-data为标量时" class="headerlink" title="4.data为标量时"></a>4.data为标量时</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">c=pd.Series(<span class="number">5</span>, index=[<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613161630994.png" alt="image-20240613161630994"></p>
+<h3 id="二、Pandas-DataFrame对象"><a href="#二、Pandas-DataFrame对象" class="headerlink" title="二、Pandas DataFrame对象"></a>二、Pandas DataFrame对象</h3><p>DataFrame是带标签数据的多维数组</p>
+<h4 id="DataFrame对象的创建"><a href="#DataFrame对象的创建" class="headerlink" title="DataFrame对象的创建"></a>DataFrame对象的创建</h4><h5 id="通用结构"><a href="#通用结构" class="headerlink" title="通用结构:"></a>通用结构:</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.Dataframe(data,index=index,columns=columns)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>data:数据，可以是列表，字典或Numpy数组</p>
+<p>index:索引，为可选参数</p>
+<p>columns:列标签，为可选参数</p>
+</blockquote>
+<h5 id="1-通过Series对象创建"><a href="#1-通过Series对象创建" class="headerlink" title="1.通过Series对象创建"></a>1.通过Series对象创建</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">population = &#123;</span><br><span class="line">    <span class="string">&#x27;Beijing&#x27;</span>:<span class="number">2156</span></span><br><span class="line">    ,<span class="string">&#x27;Chongqing&#x27;</span>:<span class="number">2182</span></span><br><span class="line">    ,<span class="string">&#x27;shanghai&#x27;</span>:<span class="number">2182</span></span><br><span class="line">&#125;</span><br><span class="line">population = pd.Series(population, index=[<span class="string">&#x27;Beijing&#x27;</span>,<span class="string">&#x27;Chongqing&#x27;</span>,<span class="string">&#x27;shanghai&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(population)</span><br><span class="line"><span class="built_in">print</span>(pd.DataFrame(population))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613162820331.png" alt="image-20240613162820331"></p>
+<p>也可取名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(pd.DataFrame(population,columns=[<span class="string">&#x27;population&#x27;</span>]))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240613162944306.png" alt="image-20240613162944306"></p>
+<h5 id="2-通过Series对象字典创建"><a href="#2-通过Series对象字典创建" class="headerlink" title="2.通过Series对象字典创建"></a>2.通过Series对象字典创建</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">population = &#123;</span><br><span class="line">    <span class="string">&#x27;Beijing&#x27;</span>:<span class="number">2156</span></span><br><span class="line">    ,<span class="string">&#x27;Chongqing&#x27;</span>:<span class="number">2182</span></span><br><span class="line">    ,<span class="string">&#x27;shanghai&#x27;</span>:<span class="number">2182</span></span><br><span class="line">&#125;</span><br><span class="line">GDP = &#123;</span><br><span class="line">    <span class="string">&#x27;Beijing&#x27;</span>:<span class="number">2000</span></span><br><span class="line">    ,<span class="string">&#x27;Chongqing&#x27;</span>:<span class="number">2100</span></span><br><span class="line">    ,<span class="string">&#x27;shanghai&#x27;</span>:<span class="number">2180</span></span><br><span class="line">&#125;</span><br><span class="line">population = pd.Series(population, index=[<span class="string">&#x27;Beijing&#x27;</span>,<span class="string">&#x27;Chongqing&#x27;</span>,<span class="string">&#x27;shanghai&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(pd.DataFrame(&#123;<span class="string">&#x27;population&#x27;</span>:population</span><br><span class="line">              ,<span class="string">&#x27;GDP&#x27;</span>:GDP&#125;))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101424507.png" alt="image-20240628101424507"></p>
+<h6 id="注：数量不够的会自动补齐"><a href="#注：数量不够的会自动补齐" class="headerlink" title="注：数量不够的会自动补齐"></a>注：数量不够的会自动补齐</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(pd.DataFrame(&#123;<span class="string">&#x27;population&#x27;</span>:population</span><br><span class="line">                ,<span class="string">&#x27;GDP&#x27;</span>:GDP</span><br><span class="line">                ,<span class="string">&#x27;country&#x27;</span>:<span class="string">&quot;China&quot;</span>&#125;))</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101058015.png" alt="image-20240628101058015"></p>
+<h5 id="3-通过字典列表对象创建"><a href="#3-通过字典列表对象创建" class="headerlink" title="3.通过字典列表对象创建"></a>3.通过字典列表对象创建</h5><ul>
+<li>字典索引作为index，字典键作为column</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = [&#123;<span class="string">&quot;a&quot;</span>: i,<span class="string">&quot;b&quot;</span>: <span class="number">2</span>*i&#125; <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line">pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不存在的键会默认为NaN</li>
+</ul>
+<h5 id="4-通过Numpy二维数组创建"><a href="#4-通过Numpy二维数组创建" class="headerlink" title="4.通过Numpy二维数组创建"></a>4.通过Numpy二维数组创建</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(np.random.randint(<span class="number">10</span>,size=(<span class="number">3</span>,<span class="number">2</span>)),columns=[<span class="string">&quot;foo&quot;</span>,<span class="string">&quot;bar&quot;</span>],index=[<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240616100748738.png" alt="image-20240616100748738"></p>
+<h4 id="DataFrame性质"><a href="#DataFrame性质" class="headerlink" title="DataFrame性质"></a>DataFrame性质</h4><h5 id="1-属性"><a href="#1-属性" class="headerlink" title="1.属性"></a>1.属性</h5><h6 id="1-df-values返回numpy数组表示的数据"><a href="#1-df-values返回numpy数组表示的数据" class="headerlink" title="1.df.values返回numpy数组表示的数据"></a>1.df.values返回numpy数组表示的数据</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.values</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101538241.png" alt="image-20240628101538241"></p>
+<h6 id="2-df-index返回行索引项"><a href="#2-df-index返回行索引项" class="headerlink" title="2.df.index返回行索引项"></a>2.df.index返回行索引项</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.index</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101605848.png" alt="image-20240628101605848"></p>
+<h6 id="3-df-columns返回列索引"><a href="#3-df-columns返回列索引" class="headerlink" title="3.df.columns返回列索引"></a>3.df.columns返回列索引</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.columns</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-df-shape形状"><a href="#4-df-shape形状" class="headerlink" title="4.df.shape形状"></a>4.df.shape形状</h6><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101656282.png" alt="image-20240628101656282"></p>
+<h6 id="5-df-size大小"><a href="#5-df-size大小" class="headerlink" title="5.df.size大小"></a>5.df.size大小</h6><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101715647.png" alt="image-20240628101715647"></p>
+<h6 id="6-df-dtypes返回每列数据类型"><a href="#6-df-dtypes返回每列数据类型" class="headerlink" title="6.df.dtypes返回每列数据类型"></a>6.df.dtypes返回每列数据类型</h6><p><img src="https://cjc729.oss-cn-beijing.aliyuncs.com/images/image-20240628101736984.png" alt="image-20240628101736984"></p>
+<h6 id="7-df-index-name-索引对象名"><a href="#7-df-index-name-索引对象名" class="headerlink" title="7.df.index.name:索引对象名"></a>7.df.index.name:索引对象名</h6><h5 id="2-索引"><a href="#2-索引" class="headerlink" title="2.索引"></a>2.索引</h5><blockquote>
+<p><strong>储存轴标签的数据结构是Index</strong></p>
+<p><strong>DataFrame，行索引和列索引都是Indes对象</strong></p>
+</blockquote>
+<h5 id="3-获取值"><a href="#3-获取值" class="headerlink" title="3.获取值"></a>3.获取值</h5><blockquote>
+<h6 id="DataFrame和Series的关系"><a href="#DataFrame和Series的关系" class="headerlink" title="DataFrame和Series的关系"></a>DataFrame和Series的关系</h6><p><strong>Dataframe每一列都是Series，Dataframe每一行都是Series</strong></p>
+</blockquote>
+<h6 id="1-获取列"><a href="#1-获取列" class="headerlink" title="1.获取列"></a>1.获取列</h6><ul>
+<li>字典式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[<span class="string">&quot;pop&quot;</span>]//获取pop一列的数据</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象属性式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[[<span class="string">&quot;GDP&quot;</span>,<span class="string">&quot;pop&quot;</span>]]//获取GDP与pop两列的数据</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-绝对索引获取行"><a href="#2-绝对索引获取行" class="headerlink" title="2.绝对索引获取行"></a>2.绝对索引获取行</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[<span class="string">&quot;BeiJing&quot;</span>]//获取BeiJing这一行的数据</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[[<span class="string">&quot;BeiJing&quot;</span>,<span class="string">&quot;HangZhou&quot;</span>]]//获取多行数据</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-相对索引获取行"><a href="#3-相对索引获取行" class="headerlink" title="3.相对索引获取行"></a>3.相对索引获取行</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[<span class="number">0</span>]//取第<span class="number">0</span>行数据</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-Series对象索引"><a href="#4-Series对象索引" class="headerlink" title="4.Series对象索引"></a>4.Series对象索引</h6><h4 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h4><h4 id="合并数据"><a href="#合并数据" class="headerlink" title="合并数据"></a>合并数据</h4><p>构造一个生产DataFrame的函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def make_def(cols, ind):</span><br><span class="line">	&quot;一个简单的DataFrame&quot;</span><br><span class="line">	data = &#123;c : [str(c)+str(i)for i in ind] for c in cols&#125;</span><br><span class="line">	print(data)</span><br><span class="line">	return pd.DataFrame(data,ind)</span><br></pre></td></tr></table></figure>
+
+<p>生成：</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">A0</td>
+<td align="center">B0</td>
+<td align="center">C0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">A1</td>
+<td align="center">B1</td>
+<td align="center">C1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">A2</td>
+<td align="center">B2</td>
+<td align="center">C2</td>
+</tr>
+</tbody></table>
+<h5 id="1-垂直合并"><a href="#1-垂直合并" class="headerlink" title="1.垂直合并"></a>1.垂直合并</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_1 = make_df(&quot;AB&quot;,[1,2])</span><br><span class="line">df_2 = make_df(&quot;AB&quot;,[3,4])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.concat([df_1,df_2])</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">A</th>
+<th align="center">B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">A1</td>
+<td align="center">B1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">A2</td>
+<td align="center">B2</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">A3</td>
+<td align="center">B3</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">A4</td>
+<td align="center">B4</td>
+</tr>
+</tbody></table>
+<p>添加参数ignore_index&#x3D;True时重置标签</p>
+<h5 id="2-水平合并"><a href="#2-水平合并" class="headerlink" title="2.水平合并"></a>2.水平合并</h5></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小chen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/06/13/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/pandas/">http://example.com/2024/06/13/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/pandas/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小chen妙妙屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python%E5%BA%93/">python库</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">数据可视化</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/%E5%9F%BA%E7%A1%80/pythonstring/" title="python字符串类型"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">python字符串类型</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/%E5%9F%BA%E7%A1%80/python%20class/" title="python类与对象"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python类与对象</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/07/11/%E5%A4%A7%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/matplotlib/" title="Matplotlib"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-11</div><div class="title">Matplotlib</div></div></a></div><div><a href="/2024/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/%E5%BA%93%E4%BB%8B%E7%BB%8D/Tkinter/" title="Tkinter"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-12</div><div class="title">Tkinter</div></div></a></div><div><a href="/2024/05/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/%E5%BA%93%E4%BB%8B%E7%BB%8D/PYTHON-re/" title="python正则表达式"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-29</div><div class="title">python正则表达式</div></div></a></div><div><a href="/2024/06/10/%E5%A4%A7%E6%95%B0%E6%8D%AE/web%E7%88%AC%E8%99%AB/beautifulsoup/" title="BeautifulSoup库"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-10</div><div class="title">BeautifulSoup库</div></div></a></div><div><a href="/2024/06/10/%E5%A4%A7%E6%95%B0%E6%8D%AE/web%E7%88%AC%E8%99%AB/crawler/" title="requests库"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-10</div><div class="title">requests库</div></div></a></div><div><a href="/2024/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python/%E5%BA%93%E4%BB%8B%E7%BB%8D/Numpy/" title="Numpy"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-13</div><div class="title">Numpy</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pandas%E5%BA%93%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">pandas库介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8Enumpy%E5%BA%93%E7%9A%84pandas%E5%BA%93%E5%88%99%E6%8F%90%E4%BE%9B%E4%BA%86%E6%9B%B4%E5%BF%AB%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">基于numpy库的pandas库则提供了更快更简单的高级数据结构和操作工具</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%BD%BD%E5%85%A5"><span class="toc-number">1.1.2.</span> <span class="toc-text">数据载入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.</span> <span class="toc-text">对象创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Pandas-Series%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">一、Pandas Series对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#series%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">series对象的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">通用结构：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%94%A8%E5%88%97%E8%A1%A8%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.用列表创建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%BC%BA%E5%B0%91index%E6%97%B6%EF%BC%8C%E9%BB%98%E8%AE%A4%E4%B8%BA%E6%95%B4%E6%95%B0%E5%BA%8F%E5%88%97"><span class="toc-number">1.2.1.2.1.</span> <span class="toc-text">1.缺少index时，默认为整数序列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0index%E6%97%B6"><span class="toc-number">1.2.1.2.2.</span> <span class="toc-text">2.添加index时</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.2.2.1.</span> <span class="toc-text">注意：可以设置多个数据类型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%BC%BA%E5%88%B6%E6%94%B9%E5%8F%98%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.2.3.</span> <span class="toc-text">3.强制改变数据类型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%94%A8numpy%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">2.用numpy数组创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%94%A8%E5%AD%97%E5%85%B8%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">3.用字典创建</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A%E6%AD%A4%E6%97%B6%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8index%EF%BC%8C%E5%BD%93%E5%AD%97%E5%85%B8%E5%AD%98%E5%9C%A8%E4%BC%9A%E5%B8%85%E9%80%89%EF%BC%8C%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%88%99%E6%98%BE%E7%A4%BANaN"><span class="toc-number">1.2.1.4.0.1.</span> <span class="toc-text">注：此时也可以使用index，当字典存在会帅选，不存在则显示NaN</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-data%E4%B8%BA%E6%A0%87%E9%87%8F%E6%97%B6"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">4.data为标量时</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Pandas-DataFrame%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.2.</span> <span class="toc-text">二、Pandas DataFrame对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DataFrame%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">DataFrame对象的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.2.1.1.</span> <span class="toc-text">通用结构:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E9%80%9A%E8%BF%87Series%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.2.1.2.</span> <span class="toc-text">1.通过Series对象创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E9%80%9A%E8%BF%87Series%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.2.1.3.</span> <span class="toc-text">2.通过Series对象字典创建</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A%E6%95%B0%E9%87%8F%E4%B8%8D%E5%A4%9F%E7%9A%84%E4%BC%9A%E8%87%AA%E5%8A%A8%E8%A1%A5%E9%BD%90"><span class="toc-number">1.2.2.1.3.1.</span> <span class="toc-text">注：数量不够的会自动补齐</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E9%80%9A%E8%BF%87%E5%AD%97%E5%85%B8%E5%88%97%E8%A1%A8%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.2.1.4.</span> <span class="toc-text">3.通过字典列表对象创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E9%80%9A%E8%BF%87Numpy%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.2.1.5.</span> <span class="toc-text">4.通过Numpy二维数组创建</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DataFrame%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">DataFrame性质</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.2.2.1.</span> <span class="toc-text">1.属性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-df-values%E8%BF%94%E5%9B%9Enumpy%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.2.2.1.1.</span> <span class="toc-text">1.df.values返回numpy数组表示的数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-df-index%E8%BF%94%E5%9B%9E%E8%A1%8C%E7%B4%A2%E5%BC%95%E9%A1%B9"><span class="toc-number">1.2.2.2.1.2.</span> <span class="toc-text">2.df.index返回行索引项</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-df-columns%E8%BF%94%E5%9B%9E%E5%88%97%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.2.2.1.3.</span> <span class="toc-text">3.df.columns返回列索引</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-df-shape%E5%BD%A2%E7%8A%B6"><span class="toc-number">1.2.2.2.1.4.</span> <span class="toc-text">4.df.shape形状</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-df-size%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.2.2.2.1.5.</span> <span class="toc-text">5.df.size大小</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-df-dtypes%E8%BF%94%E5%9B%9E%E6%AF%8F%E5%88%97%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.2.2.1.6.</span> <span class="toc-text">6.df.dtypes返回每列数据类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7-df-index-name-%E7%B4%A2%E5%BC%95%E5%AF%B9%E8%B1%A1%E5%90%8D"><span class="toc-number">1.2.2.2.1.7.</span> <span class="toc-text">7.df.index.name:索引对象名</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.2.2.2.</span> <span class="toc-text">2.索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-number">1.2.2.2.3.</span> <span class="toc-text">3.获取值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#DataFrame%E5%92%8CSeries%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.2.2.2.3.1.</span> <span class="toc-text">DataFrame和Series的关系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E8%8E%B7%E5%8F%96%E5%88%97"><span class="toc-number">1.2.2.2.3.2.</span> <span class="toc-text">1.获取列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E7%BB%9D%E5%AF%B9%E7%B4%A2%E5%BC%95%E8%8E%B7%E5%8F%96%E8%A1%8C"><span class="toc-number">1.2.2.2.3.3.</span> <span class="toc-text">2.绝对索引获取行</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E7%9B%B8%E5%AF%B9%E7%B4%A2%E5%BC%95%E8%8E%B7%E5%8F%96%E8%A1%8C"><span class="toc-number">1.2.2.2.3.4.</span> <span class="toc-text">3.相对索引获取行</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-Series%E5%AF%B9%E8%B1%A1%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.2.2.3.5.</span> <span class="toc-text">4.Series对象索引</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">缺失值处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">合并数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%9E%82%E7%9B%B4%E5%90%88%E5%B9%B6"><span class="toc-number">1.2.2.4.1.</span> <span class="toc-text">1.垂直合并</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%B0%B4%E5%B9%B3%E5%90%88%E5%B9%B6"><span class="toc-number">1.2.2.4.2.</span> <span class="toc-text">2.水平合并</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 小chen</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/styles/fish.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
