@@ -1,0 +1,867 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PHP 数据类型 | 小chen妙妙屋</title><meta name="author" content="小chen"><meta name="copyright" content="小chen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="PHP 数据类型[toc]  PHP 变量存储不同的类型的数据，不同的数据类型可以做不一样的事情。 PHP 支持以下几种数据类型:  String（字符串） Integer（整型） Float（浮点型） Boolean（布尔型） Array（数组） Object（对象） NULL（空值） Resource（资源类型）   PHP 字符串一个字符串是一串字符的序列，就像 “Hello world!”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP 数据类型">
+<meta property="og:url" content="http://example.com/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpshujuleixing/index.html">
+<meta property="og:site_name" content="小chen妙妙屋">
+<meta property="og:description" content="PHP 数据类型[toc]  PHP 变量存储不同的类型的数据，不同的数据类型可以做不一样的事情。 PHP 支持以下几种数据类型:  String（字符串） Integer（整型） Float（浮点型） Boolean（布尔型） Array（数组） Object（对象） NULL（空值） Resource（资源类型）   PHP 字符串一个字符串是一串字符的序列，就像 “Hello world!”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://api.chenjichao.site/pc/aesthetic/3.webp">
+<meta property="article:published_time" content="2024-08-06T11:15:55.000Z">
+<meta property="article:modified_time" content="2024-08-06T11:54:13.256Z">
+<meta property="article:author" content="小chen">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.chenjichao.site/pc/aesthetic/3.webp"><link rel="shortcut icon" href="/img/output.png"><link rel="canonical" href="http://example.com/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpshujuleixing/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PHP 数据类型',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-08-06 19:54:13'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://image.chenjichao.site/file/81bb6c520407bb11b35c9.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">37</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://api.chenjichao.site/pc/aesthetic/3.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="小chen妙妙屋"><img class="site-icon" src="/img%5Coutput.png"/><span class="site-name">小chen妙妙屋</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">PHP 数据类型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-06T11:15:55.000Z" title="发表于 2024-08-06 19:15:55">2024-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-06T11:54:13.256Z" title="更新于 2024-08-06 19:54:13">2024-08-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/">php</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span id="" data-flag-title="PHP 数据类型"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="twikoo_visitors"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="PHP-数据类型"><a href="#PHP-数据类型" class="headerlink" title="PHP 数据类型"></a>PHP 数据类型</h1><p>[toc]</p>
+<hr>
+<p>PHP 变量存储不同的类型的数据，不同的数据类型可以做不一样的事情。</p>
+<p>PHP 支持以下几种数据类型:</p>
+<ul>
+<li>String（字符串）</li>
+<li>Integer（整型）</li>
+<li>Float（浮点型）</li>
+<li>Boolean（布尔型）</li>
+<li>Array（数组）</li>
+<li>Object（对象）</li>
+<li>NULL（空值）</li>
+<li>Resource（资源类型）</li>
+</ul>
+<hr>
+<h2 id="PHP-字符串"><a href="#PHP-字符串" class="headerlink" title="PHP 字符串"></a>PHP 字符串</h2><p>一个字符串是一串字符的序列，就像 “Hello world!”。</p>
+<p>你可以将任何文本放在单引号和双引号中：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="variable">$x</span> = <span class="string">&quot;Hello world!&quot;</span>; </span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$x</span>; </span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line">	<span class="variable">$x</span> = <span class="string">&#x27;Hello world!&#x27;</span>; <span class="keyword">echo</span> <span class="variable">$x</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<hr>
+<h2 id="PHP-整型"><a href="#PHP-整型" class="headerlink" title="PHP 整型"></a>PHP 整型</h2><p>整数是一个没有小数的数字。</p>
+<p>整数规则:</p>
+<ul>
+<li>整数必须至少有一个数字 (0-9)</li>
+<li>整数不能包含逗号或空格</li>
+<li>整数是没有小数点的</li>
+<li>整数可以是正数或负数</li>
+<li>整型可以用三种格式来指定：十进制， 十六进制（ 以 0x 为前缀）或八进制（前缀为 0）。</li>
+</ul>
+<p>在以下实例中我们将测试不同的数字。</p>
+<p>PHP <a href="/php/php-var_dump-function.html">var_dump() </a> 函数返回变量的数据类型和值：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="variable">$x</span> = <span class="number">5985</span>; <span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>); </span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line">	<span class="variable">$x</span> = -<span class="number">345</span>; <span class="comment">// 负数  var_dump($x);</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line">	<span class="variable">$x</span> = <span class="number">0x8C</span>; <span class="comment">// 十六进制数 var_dump($x); echo &quot;&lt;br&gt;&quot;; $x = 047; // 八进制数</span></span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="PHP-浮点型"><a href="#PHP-浮点型" class="headerlink" title="PHP 浮点型"></a>PHP 浮点型</h2><p>浮点数是带小数部分的数字，或是指数形式。</p>
+<p>在以下实例中我们将测试不同的数字。 PHP var_dump() 函数返回变量的数据类型和值：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$x</span> = <span class="number">10.365</span>; </span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>); </span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line">	<span class="variable">$x</span> = <span class="number">2.4e3</span>; </span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>); </span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>; </span><br><span class="line">	<span class="variable">$x</span> = <span class="number">8E-5</span>; </span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>); </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="PHP-布尔型"><a href="#PHP-布尔型" class="headerlink" title="PHP 布尔型"></a>PHP 布尔型</h2><p>布尔型可以是 TRUE 或 FALSE。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$x</span>=<span class="literal">true</span>;  </span><br><span class="line"><span class="variable">$y</span>=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<p>布尔型通常用于条件判断。在接下来的章节中你会学到更多关于条件控制的教程。</p>
+<hr>
+<h2 id="PHP-数组"><a href="#PHP-数组" class="headerlink" title="PHP 数组"></a>PHP 数组</h2><p>数组可以在一个变量中存储多个值。</p>
+<p>在以下实例中创建了一个数组， 然后使用 PHP var_dump() 函数返回数组的数据类型和值：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">    <span class="variable">$cars</span>=<span class="keyword">array</span>(<span class="string">&quot;Volvo&quot;</span>,<span class="string">&quot;BMW&quot;</span>,<span class="string">&quot;Toyota&quot;</span>); </span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="variable">$cars</span>); </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>在接下来的章节中你将学到更多关于数组的知识。</p>
+<hr>
+<h2 id="PHP-对象"><a href="#PHP-对象" class="headerlink" title="PHP 对象"></a>PHP 对象</h2><p>对象数据类型也可以用于存储数据。</p>
+<p>在 PHP 中，对象必须声明。</p>
+<p>首先，你必须使用class关键字声明类对象。类是可以包含属性和方法的结构。</p>
+<p>然后我们在类中定义数据类型，然后在实例化的类中使用数据类型：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123; </span><br><span class="line">    	<span class="keyword">var</span> <span class="variable">$color</span>; </span><br><span class="line">    	<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$color</span>=<span class="string">&quot;green&quot;</span></span>)</span>&#123;</span><br><span class="line">        	<span class="variable language_">$this</span>-&gt;color = <span class="variable">$color</span>; &#125; </span><br><span class="line">     	<span class="function"><span class="keyword">function</span> <span class="title">what_color</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;color; &#125;&#125; </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>以上实例中PHP关键字this就是指向当前对象实例的指针，不指向任何其他对象或类。</p>
+<p>你将会在接下来的章节中学会更多关于对象的知识。</p>
+<hr>
+<h2 id="PHP-NULL-值"><a href="#PHP-NULL-值" class="headerlink" title="PHP NULL 值"></a>PHP NULL 值</h2><p>NULL 值表示变量没有值。NULL 是数据类型为 NULL 的值。</p>
+<p>NULL 值指明一个变量是否为空值。 同样可用于数据空值和NULL值的区别。</p>
+<p>可以通过设置变量值为 NULL 来清空变量数据：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$x</span>=<span class="string">&quot;Hello world!&quot;</span>; </span><br><span class="line">	<span class="variable">$x</span>=<span class="literal">null</span>; </span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="variable">$x</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="PHP-资源类型"><a href="#PHP-资源类型" class="headerlink" title="PHP 资源类型"></a>PHP 资源类型</h2><p>PHP 资源 resource 是一种特殊变量，保存了到外部资源的一个引用。</p>
+<p>常见资源数据类型有打开文件、数据库连接、图形画布区域等。</p>
+<p>由于资源类型变量保存有为打开文件、数据库连接、图形画布区域等的特殊句柄，因此将其它类型的值转换为资源没有意义。</p>
+<p>使用 <strong>get_resource_type()</strong> 函数可以返回资源（resource）类型：</p>
+<p>​<br>​    get_resource_type(resource $handle): string</p>
+<p>此函数返回一个字符串，用于表示传递给它的 resource 的类型。如果参数不是合法的 resource，将产生错误。</p>
+<p>如下实例：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line">	<span class="variable">$c</span> = <span class="title function_ invoke__">mysql_connect</span>();  </span><br><span class="line">	<span class="keyword">echo</span> <span class="title function_ invoke__">get_resource_type</span>(<span class="variable">$c</span>).<span class="string">&quot;\n&quot;</span>;  </span><br><span class="line">	<span class="comment">// 打印：mysql link  </span></span><br><span class="line"></span><br><span class="line">	<span class="variable">$fp</span> = <span class="title function_ invoke__">fopen</span>(<span class="string">&quot;foo&quot;</span>,<span class="string">&quot;w&quot;</span>);  </span><br><span class="line">	<span class="keyword">echo</span> <span class="title function_ invoke__">get_resource_type</span>(<span class="variable">$fp</span>).<span class="string">&quot;\n&quot;</span>;  </span><br><span class="line">	<span class="comment">// 打印：file  </span></span><br><span class="line"></span><br><span class="line">	<span class="variable">$doc</span> = <span class="title function_ invoke__">new_xmldoc</span>(<span class="string">&quot;1.0&quot;</span>);  </span><br><span class="line">	<span class="keyword">echo</span> <span class="title function_ invoke__">get_resource_type</span>(<span class="variable">$doc</span>-&gt;doc).<span class="string">&quot;\n&quot;</span>;  </span><br><span class="line">	<span class="comment">// 打印：domxml document  </span></span><br><span class="line"><span class="meta">?&gt;</span>  </span><br></pre></td></tr></table></figure>
+
+<h1 id="PHP-类型比较"><a href="#PHP-类型比较" class="headerlink" title="PHP 类型比较"></a>PHP 类型比较</h1><p>虽然 PHP 是弱类型语言，但也需要明白变量类型及它们的意义，因为我们经常需要对 PHP 变量进行比较，包含松散和严格比较。</p>
+<ul>
+<li>松散比较：使用两个等号 &#x3D;&#x3D; 比较，只比较值，不比较类型。</li>
+<li>严格比较：用三个等号 &#x3D;&#x3D;&#x3D; 比较，除了比较值，也比较类型。</li>
+</ul>
+<p>例如，”42” 是一个字符串而 42 是一个整数。FALSE 是一个布尔值而 “FALSE” 是一个字符串。</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">	<span class="keyword">if</span>(<span class="number">42</span> == <span class="string">&quot;42&quot;</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;1、值相等&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL; <span class="comment">// 换行符 if(42 === &quot;42&quot;) &#123;</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&#x27;2、类型相等&#x27;</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">else</span> &#123; </span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&#x27;3、类型不相等&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果为：</p>
+<p>​<br>​    1、值相等<br>​<br>​    3、类型不相等</p>
+<h3 id="PHP中-比较-0、false、null"><a href="#PHP中-比较-0、false、null" class="headerlink" title="PHP中 比较 0、false、null"></a>PHP中 比较 0、false、null</h3><p>测试代码:</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&#x27;0 == false: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> == <span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;0 === false: &#x27;</span>;</span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> === <span class="literal">false</span>);</span><br><span class="line"><span class="comment">//	0 == false: bool(true)</span></span><br><span class="line"><span class="comment">//  0 === false: bool(false)  </span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;0 == null: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> == <span class="literal">null</span>);</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&#x27;0 === null: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="number">0</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="comment">//  0 == null: bool(true)</span></span><br><span class="line"><span class="comment">//  0 === null: bool(false)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL; </span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&#x27;false == null:&#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="literal">false</span> == <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;false === null: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="literal">false</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="comment">//  false == null: bool(true)</span></span><br><span class="line"><span class="comment">//  false === null: bool(false)</span></span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">	<span class="keyword">echo</span> PHP_EOL;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; == false: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> == <span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; ===false: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> === <span class="literal">false</span>);</span><br><span class="line"><span class="comment">//  &quot;0&quot; == false: bool(true) </span></span><br><span class="line"><span class="comment">//   &quot;0&quot; === false: bool(false)</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; == null: &#x27;</span>;</span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> == <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;0&quot; === null: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;0&quot;</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="comment">//  &quot;0&quot; == null: bool(false)    </span></span><br><span class="line"><span class="comment">//  &quot;0&quot; === null: bool(false)</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; == false: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> == <span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; === false: &#x27;</span>;</span><br><span class="line">	<span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> === <span class="literal">false</span>);</span><br><span class="line"><span class="comment">//  &quot;&quot; == false: bool(true)   </span></span><br><span class="line"><span class="comment">//  &quot;&quot; === false: bool(false)</span></span><br><span class="line">       </span><br><span class="line">    <span class="keyword">echo</span> PHP_EOL;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; == null: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> ==<span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&quot;&quot; === null: &#x27;</span>;</span><br><span class="line">    <span class="title function_ invoke__">var_dump</span>(<span class="string">&quot;&quot;</span> === <span class="literal">null</span>);</span><br><span class="line"><span class="comment">//  &quot;&quot; == null: bool(true)    </span></span><br><span class="line"><span class="comment">//  &quot;&quot; === null: bool(false)</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://image.chenjichao.site/file/e66ca0f387f568e58e387.png" alt="img"></p>
+<p><img src="https://image.chenjichao.site/file/eeaa666e1799d85311603.png"></p>
+<h1 id="PHP-常量"><a href="#PHP-常量" class="headerlink" title="PHP 常量"></a>PHP 常量</h1><h2 id="常量的特性"><a href="#常量的特性" class="headerlink" title="常量的特性"></a>常量的特性</h2><p>PHP 中的常量是指一旦定义后其值不能被改变的标识符。</p>
+<p>常量值被定义后，在脚本的其他任何地方都不能被改变。</p>
+<p>常量可以用 define() 函数或 const 关键字来定义。</p>
+<h2 id="PHP-常量-1"><a href="#PHP-常量-1" class="headerlink" title="PHP 常量"></a>PHP 常量</h2><ol>
+<li><strong>不变性</strong> : 常量一旦定义，其值不能改变。</li>
+<li><strong>全局作用域</strong> : 常量在定义后，可以在整个脚本的任何地方使用，无需使用 <code>global</code> 关键字。</li>
+<li><strong>数据类型</strong> : 常量的值可以是标量数据类型（如布尔值、整数、浮点数、字符串）或数组（PHP 7 及以上版本）。</li>
+<li><strong>区分大小写</strong> : 常量名称默认是区分大小写的。如果需要定义大小写不敏感的常量，可以在 <code>define()</code> 函数的第三个参数设置为 <code>true</code>。</li>
+</ol>
+<p>常量是一个简单值的标识符，该值在脚本中不能改变。</p>
+<p>一个常量由英文字母、下划线、和数字组成，但数字不能作为首字母出现。 (常量名不需要加 $ 修饰符)。</p>
+<p><strong>注意：</strong> 常量在整个脚本中都可以使用。</p>
+<h2 id="设置-PHP-常量"><a href="#设置-PHP-常量" class="headerlink" title="设置 PHP 常量"></a>设置 PHP 常量</h2><p>设置常量，使用 define() 函数，函数语法如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">bool</span> <span class="title function_ invoke__">define</span> ( <span class="keyword">string</span> <span class="variable">$name</span> , <span class="keyword">mixed</span> <span class="variable">$value</span> [, <span class="keyword">bool</span> <span class="variable">$case_insensitive</span> = <span class="literal">false</span> ] )</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>该函数有三个参数:</p>
+<ul>
+<li><p><strong>name：</strong> 必选参数，常量名称，即标志符。</p>
+</li>
+<li><p><strong>value：</strong> 必选参数，常量的值。</p>
+</li>
+<li><p><strong>case_insensitive</strong> ：可选参数，如果设置为 TRUE，该常量则大小写不敏感，默认是大小写敏感的。</p>
+</li>
+</ul>
+<p><strong>注意：</strong> 自 PHP 7.3.0 开始，定义不区分大小写的常量已被弃用。从 PHP 8.0.0 开始，只有 false 是可接受的值，传递 true<br>将产生一个警告。</p>
+<p>以下实例我们创建一个 <strong>区分大小写的常量</strong> （PHP7.3 版本之后不建议使用）, 常量值为 “欢迎访问 Runoob.com”：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="comment">// 区分大小写的常量名</span></span><br><span class="line">	<span class="title function_ invoke__">define</span>(<span class="string">&quot;GREETING&quot;</span>, <span class="string">&quot;欢迎访问 Runoob.com&quot;</span>);</span><br><span class="line">    <span class="keyword">echo</span> GREETING; <span class="comment">// 输出&quot;欢迎访问 Runoob.com&quot;</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;</span><br><span class="line">	<span class="keyword">echo</span> greeting; <span class="comment">// 输出&quot;greeting&quot;，但是有警告信息，表示该常量未定义</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以下实例我们创建一个 <strong>不区分大小写的常量</strong> , 常量值为 “欢迎访问 Runoob.com”：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="comment">// 不区分大小写的常量名 </span></span><br><span class="line">    <span class="title function_ invoke__">define</span>(<span class="string">&quot;GREETING&quot;</span>, <span class="string">&quot;欢迎访问 Runoob.com&quot;</span>, <span class="literal">true</span>); </span><br><span class="line">	<span class="keyword">echo</span> greeting; <span class="comment">// 输出 &quot;欢迎访问 Runoob.com&quot;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="常量是全局的"><a href="#常量是全局的" class="headerlink" title="常量是全局的"></a>常量是全局的</h2><p>常量在定义后，默认是全局变量，可以在整个运行的脚本的任何地方使用。</p>
+<p>以下实例演示了在函数内使用常量，即便常量定义在函数外也可以正常使用常量。</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">define</span>(<span class="string">&quot;GREETING&quot;</span>, <span class="string">&quot;欢迎访问 Runoob.com&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">myTest</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> GREETING; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="title function_ invoke__">myTest</span>(); <span class="comment">// 输出 &quot;欢迎访问 Runoob.com&quot;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="使用-const-关键字"><a href="#使用-const-关键字" class="headerlink" title="使用 const 关键字"></a>使用 const 关键字</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">CONSTANT_NAME</span> = <span class="string">&quot;value&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>以下是一个使用 const 关键字定义常量的实例：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">SITE_URL</span> = <span class="string">&quot;https://www.runoob.com&quot;</span>;  </span><br><span class="line"><span class="keyword">echo</span> SITE_URL; <span class="comment">// 输出 &quot;https://www.runoob.com&quot;  </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="预定义常量"><a href="#预定义常量" class="headerlink" title="预定义常量"></a>预定义常量</h2><p>PHP 提供了一些预定义常量，可以在脚本中直接使用。这些常量通常用于获取 PHP 的配置信息、版本信息等。常见的预定义常量有：</p>
+<ul>
+<li><code>PHP_VERSION</code>：当前 PHP 解析器的版本。</li>
+<li><code>PHP_OS</code>：服务器的操作系统。</li>
+<li><code>PHP_INT_MAX</code>：最大的整数值。</li>
+<li><code>E_ERROR</code>、<code>E_WARNING</code>、<code>E_PARSE</code> 等：错误报告级别。</li>
+</ul>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> PHP_VERSION; <span class="comment">// 输出 PHP 版本，例如 &quot;7.4.1&quot;  </span></span><br><span class="line"><span class="keyword">echo</span> PHP_OS; <span class="comment">// 输出操作系统，例如 &quot;Linux&quot;  </span></span><br><span class="line"><span class="keyword">echo</span> PHP_INT_MAX; <span class="comment">// 输出最大的整数值，例如 &quot;9223372036854775807&quot;  </span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="常量数组（PHP-7-及以上版本）"><a href="#常量数组（PHP-7-及以上版本）" class="headerlink" title="常量数组（PHP 7 及以上版本）"></a>常量数组（PHP 7 及以上版本）</h2><p>在 PHP 7 及以上版本中，常量也可以是数组。</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;FRUITS&quot;</span>, [  </span><br><span class="line">	<span class="string">&quot;Apple&quot;</span>,  </span><br><span class="line">	<span class="string">&quot;Banana&quot;</span>,  </span><br><span class="line">	<span class="string">&quot;Orange&quot;</span>  </span><br><span class="line">]);  </span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> FRUITS[<span class="number">0</span>]; <span class="comment">// 输出 &quot;Apple&quot;  </span></span><br></pre></td></tr></table></figure>
+<p>或者使用 const：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">COLORS</span> = [  </span><br><span class="line">	<span class="string">&quot;Red&quot;</span>,  </span><br><span class="line">	<span class="string">&quot;Green&quot;</span>,  </span><br><span class="line">	<span class="string">&quot;Blue&quot;</span>  </span><br><span class="line">];  </span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> COLORS[<span class="number">1</span>]; <span class="comment">// 输出 &quot;Green&quot;  </span></span><br></pre></td></tr></table></figure>
+
+<h1 id="PHP-字符串变量"><a href="#PHP-字符串变量" class="headerlink" title="PHP 字符串变量"></a>PHP 字符串变量</h1><hr>
+<p>字符串变量用于存储并处理文本。</p>
+<hr>
+<h2 id="PHP-中的字符串变量"><a href="#PHP-中的字符串变量" class="headerlink" title="PHP 中的字符串变量"></a>PHP 中的字符串变量</h2><p>字符串变量用于包含有字符的值。</p>
+<p>在创建字符串之后，我们就可以对它进行操作了。您可以直接在函数中使用字符串，或者把它存储在变量中。</p>
+<p>在下面的实例中，我们创建一个名为 txt 的字符串变量，并赋值为 “Hello world!” 。然后我们输出 txt 变量的值：</p>
+<p><strong>实例</strong></p>
+<?php  
+$txt="Hello world!";  
+echo $txt;  
+?>
+
+<p>  <strong>注释：</strong> 当您赋一个文本值给变量时，请记得给文本值加上单引号或者双引号。  </p>
+<p>现在，让我们来看看一些常用的操作字符串的函数和运算符。</p>
+<hr>
+<h2 id="PHP-并置运算符"><a href="#PHP-并置运算符" class="headerlink" title="PHP 并置运算符"></a>PHP 并置运算符</h2><p>在 PHP 中，只有一个字符串运算符。</p>
+<p>并置运算符 (.) 用于把两个字符串值连接起来。</p>
+<p>下面的实例演示了如何将两个字符串变量连接在一起：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"><span class="variable">$txt1</span>=<span class="string">&quot;Hello world!&quot;</span>;  </span><br><span class="line"><span class="variable">$txt2</span>=<span class="string">&quot;What a nice day!&quot;</span>;  </span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$txt1</span> . <span class="string">&quot; &quot;</span> . <span class="variable">$txt2</span>;  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码将输出：Hello world! What a nice day!</p>
+<p><strong>提示：</strong> 在上面的代码中，我们已经使用了两次并置运算符。这是由于我们需要在两个字符串之间插入一个空格。</p>
+<hr>
+<h2 id="PHP-strlen-函数"><a href="#PHP-strlen-函数" class="headerlink" title="PHP strlen() 函数"></a>PHP strlen() 函数</h2><p>有时知道字符串值的长度是很有用的。</p>
+<p>strlen() 函数返回字符串的长度（字节数）。</p>
+<p>下面的实例返回字符串 “Hello world!” 的长度：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">strlen</span>(<span class="string">&quot;Hello world!&quot;</span>);  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>上面的代码将输出：12</p>
+<p><strong>提示：</strong> strlen()<br>常常用在循环和其他函数中，因为那时确定字符串何时结束是很重要的。（例如，在循环中，我们需要在字符串中的最后一个字符之后结束循环。）</p>
+<hr>
+<h2 id="PHP-strpos-函数"><a href="#PHP-strpos-函数" class="headerlink" title="PHP strpos() 函数"></a>PHP strpos() 函数</h2><p>strpos() 函数用于在字符串内查找一个字符或一段指定的文本。</p>
+<p>如果在字符串中找到匹配，该函数会返回第一个匹配的字符位置。如果未找到匹配，则返回 FALSE。</p>
+<p>下面的实例在字符串 “Hello world!” 中查找文本 “world”：</p>
+<p><strong>实例</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">strpos</span>(<span class="string">&quot;Hello world!&quot;</span>,<span class="string">&quot;world&quot;</span>);  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="/try/runcode.php?filename=demo_string_pos&type=php">运行实例 »</a></p>
+<p>上面的代码将输出：6</p>
+<p><strong>提示：</strong> 在上面的实例中，字符串 “world” 的位置是 6。之所以是 6 而不是 7 的原因是，字符串中第一个字符的位置是 0，而不是 1。</p>
+<hr>
+<h2 id="完整的-PHP-String-参考手册"><a href="#完整的-PHP-String-参考手册" class="headerlink" title="完整的 PHP String 参考手册"></a>完整的 PHP String 参考手册</h2><h3 id="PHP-5-String-函数"><a href="#PHP-5-String-函数" class="headerlink" title="PHP 5 String 函数"></a>PHP 5 String 函数</h3><p>PHP String 函数是 PHP 核心的组成部分。无需安装即可使用这些函数。</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="func-string-addcslashes.html">addcslashes()</a></td>
+<td>返回在指定的字符前添加反斜杠的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-addslashes.html">addslashes()</a></td>
+<td>返回在预定义的字符前添加反斜杠的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-bin2hex.html">bin2hex()</a></td>
+<td>把 ASCII 字符的字符串转换为十六进制值。</td>
+</tr>
+<tr>
+<td><a href="func-string-chop.html">chop()</a></td>
+<td>移除字符串右侧的空白字符或其他字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-chr.html">chr()</a></td>
+<td>从指定 ASCII 值返回字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-chunk-split.html">chunk_split()</a></td>
+<td>把字符串分割为一连串更小的部分。</td>
+</tr>
+<tr>
+<td><a href="func-string-convert-cyr-string.html">convert_cyr_string()</a></td>
+<td>把字符串由一种 Cyrillic 字符集转换成另一种。</td>
+</tr>
+<tr>
+<td><a href="func-string-convert-uudecode.html">convert_uudecode()</a></td>
+<td>对 uuencode 编码的字符串进行解码。</td>
+</tr>
+<tr>
+<td><a href="func-string-convert-uuencode.html">convert_uuencode()</a></td>
+<td>使用 uuencode 算法对字符串进行编码。</td>
+</tr>
+<tr>
+<td><a href="func-string-count-chars.html">count_chars()</a></td>
+<td>返回字符串所用字符的信息。</td>
+</tr>
+<tr>
+<td><a href="func-string-crc32.html">crc32()</a></td>
+<td>计算一个字符串的 32 位 CRC（循环冗余校验）。</td>
+</tr>
+<tr>
+<td><a href="func-string-crypt.html">crypt()</a></td>
+<td>单向的字符串加密法（hashing）。</td>
+</tr>
+<tr>
+<td><a href="func-string-echo.html">echo()</a></td>
+<td>输出一个或多个字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-explode.html">explode()</a></td>
+<td>把字符串打散为数组。</td>
+</tr>
+<tr>
+<td><a href="func-string-fprintf.html">fprintf()</a></td>
+<td>把格式化的字符串写入到指定的输出流。</td>
+</tr>
+<tr>
+<td><a href="func-string-get-html-translation-table.html">get_html_translation_table()</a></td>
+<td>返回 htmlspecialchars() 和 htmlentities() 使用的翻译表。</td>
+</tr>
+<tr>
+<td><a href="func-string-hebrev.html">hebrev()</a></td>
+<td>把希伯来（Hebrew）文本转换为可见文本。</td>
+</tr>
+<tr>
+<td><a href="func-string-hebrevc.html">hebrevc()</a></td>
+<td>把希伯来（Hebrew）文本转换为可见文本，并把新行（\n）转换为 <br>。</td>
+</tr>
+<tr>
+<td><a href="func-string-hex2bin.html">hex2bin()</a></td>
+<td>把十六进制值的字符串转换为 ASCII 字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-html-entity-decode.html">html_entity_decode()</a></td>
+<td>把 HTML 实体转换为字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-htmlentities.html">htmlentities()</a></td>
+<td>把字符转换为 HTML 实体。</td>
+</tr>
+<tr>
+<td><a href="func-string-htmlspecialchars-decode.html">htmlspecialchars_decode()</a></td>
+<td>把一些预定义的 HTML 实体转换为字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-htmlspecialchars.html">htmlspecialchars()</a></td>
+<td>把一些预定义的字符转换为 HTML 实体。</td>
+</tr>
+<tr>
+<td><a href="func-string-implode.html">implode()</a></td>
+<td>返回一个由数组元素组合成的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-join.html">join()</a></td>
+<td>implode() 的别名。</td>
+</tr>
+<tr>
+<td><a href="func-string-lcfirst.html">lcfirst()</a></td>
+<td>把字符串中的首字符转换为小写。</td>
+</tr>
+<tr>
+<td><a href="func-string-levenshtein.html">levenshtein()</a></td>
+<td>返回两个字符串之间的 Levenshtein 距离。</td>
+</tr>
+<tr>
+<td><a href="func-string-localeconv.html">localeconv()</a></td>
+<td>返回本地数字及货币格式信息。</td>
+</tr>
+<tr>
+<td><a href="func-string-ltrim.html">ltrim()</a></td>
+<td>移除字符串左侧的空白字符或其他字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-md5.html">md5()</a></td>
+<td>计算字符串的 MD5 散列。</td>
+</tr>
+<tr>
+<td><a href="func-string-md5-file.html">md5_file()</a></td>
+<td>计算文件的 MD5 散列。</td>
+</tr>
+<tr>
+<td><a href="func-string-metaphone.html">metaphone()</a></td>
+<td>计算字符串的 metaphone 键。</td>
+</tr>
+<tr>
+<td><a href="func-string-money-format.html">money_format()</a></td>
+<td>返回格式化为货币字符串的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-nl-langinfo.html">nl_langinfo()</a></td>
+<td>返回指定的本地信息。</td>
+</tr>
+<tr>
+<td><a href="func-string-nl2br.html">nl2br()</a></td>
+<td>在字符串中的每个新行之前插入 HTML 换行符。</td>
+</tr>
+<tr>
+<td><a href="func-string-number-format.html">number_format()</a></td>
+<td>通过千位分组来格式化数字。</td>
+</tr>
+<tr>
+<td><a href="func-string-ord.html">ord()</a></td>
+<td>返回字符串中第一个字符的 ASCII 值。</td>
+</tr>
+<tr>
+<td><a href="func-string-parse-str.html">parse_str()</a></td>
+<td>把查询字符串解析到变量中。</td>
+</tr>
+<tr>
+<td><a href="func-string-print.html">print()</a></td>
+<td>输出一个或多个字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-printf.html">printf()</a></td>
+<td>输出格式化的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-quoted-printable-decode.html">quoted_printable_decode()</a></td>
+<td>把 quoted-printable 字符串转换为 8 位字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-quoted-printable-encode.html">quoted_printable_encode()</a></td>
+<td>把 8 位字符串转换为 quoted-printable 字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-quotemeta.html">quotemeta()</a></td>
+<td>引用元字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-rtrim.html">rtrim()</a></td>
+<td>移除字符串右侧的空白字符或其他字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-setlocale.html">setlocale()</a></td>
+<td>设置地区信息（地域信息）。</td>
+</tr>
+<tr>
+<td><a href="func-string-sha1.html">sha1()</a></td>
+<td>计算字符串的 SHA-1 散列。</td>
+</tr>
+<tr>
+<td><a href="func-string-sha1-file.html">sha1_file()</a></td>
+<td>计算文件的 SHA-1 散列。</td>
+</tr>
+<tr>
+<td><a href="func-string-similar-text.html">similar_text()</a></td>
+<td>计算两个字符串的相似度。</td>
+</tr>
+<tr>
+<td><a href="func-string-soundex.html">soundex()</a></td>
+<td>计算字符串的 soundex 键。</td>
+</tr>
+<tr>
+<td><a href="func-string-sprintf.html">sprintf()</a></td>
+<td>把格式化的字符串写入一个变量中。</td>
+</tr>
+<tr>
+<td><a href="func-string-sscanf.html">sscanf()</a></td>
+<td>根据指定的格式解析来自一个字符串的输入。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-getcsv.html">str_getcsv()</a></td>
+<td>把 CSV 字符串解析到数组中。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-ireplace.html">str_ireplace()</a></td>
+<td>替换字符串中的一些字符（大小写不敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-pad.html">str_pad()</a></td>
+<td>把字符串填充为新的长度。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-repeat.html">str_repeat()</a></td>
+<td>把字符串重复指定的次数。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-replace.html">str_replace()</a></td>
+<td>替换字符串中的一些字符（大小写敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-rot13.html">str_rot13()</a></td>
+<td>对字符串执行 ROT13 编码。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-shuffle.html">str_shuffle()</a></td>
+<td>随机地打乱字符串中的所有字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-split.html">str_split()</a></td>
+<td>把字符串分割到数组中。</td>
+</tr>
+<tr>
+<td><a href="func-string-str-word-count.html">str_word_count()</a></td>
+<td>计算字符串中的单词数。</td>
+</tr>
+<tr>
+<td><a href="func-string-strcasecmp.html">strcasecmp()</a></td>
+<td>比较两个字符串（大小写不敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strchr.html">strchr()</a></td>
+<td>查找字符串在另一字符串中的第一次出现。（strstr() 的别名。）</td>
+</tr>
+<tr>
+<td><a href="func-string-strcmp.html">strcmp()</a></td>
+<td>比较两个字符串（大小写敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strcoll.html">strcoll()</a></td>
+<td>比较两个字符串（根据本地设置）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strcspn.html">strcspn()</a></td>
+<td>返回在找到任何指定的字符之前，在字符串查找的字符数。</td>
+</tr>
+<tr>
+<td><a href="func-string-strip-tags.html">strip_tags()</a></td>
+<td>剥去字符串中的 HTML 和 PHP 标签。</td>
+</tr>
+<tr>
+<td><a href="func-string-stripcslashes.html">stripcslashes()</a></td>
+<td>删除由 addcslashes() 函数添加的反斜杠。</td>
+</tr>
+<tr>
+<td><a href="func-string-stripslashes.html">stripslashes()</a></td>
+<td>删除由 addslashes() 函数添加的反斜杠。</td>
+</tr>
+<tr>
+<td><a href="func-string-stripos.html">stripos()</a></td>
+<td>返回字符串在另一字符串中第一次出现的位置（大小写不敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-stristr.html">stristr()</a></td>
+<td>查找字符串在另一字符串中第一次出现的位置（大小写不敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strlen.html">strlen()</a></td>
+<td>返回字符串的长度。中文字符串的处理使用 <a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-string-mb_strlen.html">mb_strlen() 函数</a>。</td>
+</tr>
+<tr>
+<td><a href="func-string-strnatcasecmp.html">strnatcasecmp()</a></td>
+<td>使用一种”自然排序”算法来比较两个字符串（大小写不敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strnatcmp.html">strnatcmp()</a></td>
+<td>使用一种”自然排序”算法来比较两个字符串（大小写敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strncasecmp.html">strncasecmp()</a></td>
+<td>前 n 个字符的字符串比较（大小写不敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strncmp.html">strncmp()</a></td>
+<td>前 n 个字符的字符串比较（大小写敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strpbrk.html">strpbrk()</a></td>
+<td>在字符串中搜索指定字符中的任意一个。</td>
+</tr>
+<tr>
+<td><a href="func-string-strpos.html">strpos()</a></td>
+<td>返回字符串在另一字符串中第一次出现的位置（大小写敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strrchr.html">strrchr()</a></td>
+<td>查找字符串在另一个字符串中最后一次出现。</td>
+</tr>
+<tr>
+<td><a href="func-string-strrev.html">strrev()</a></td>
+<td>反转字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-strripos.html">strripos()</a></td>
+<td>查找字符串在另一字符串中最后一次出现的位置(大小写不敏感)。</td>
+</tr>
+<tr>
+<td><a href="func-string-strrpos.html">strrpos()</a></td>
+<td>查找字符串在另一字符串中最后一次出现的位置(大小写敏感)。</td>
+</tr>
+<tr>
+<td><a href="func-string-strspn.html">strspn()</a></td>
+<td>返回在字符串中包含的特定字符的数目。</td>
+</tr>
+<tr>
+<td><a href="func-string-strstr.html">strstr()</a></td>
+<td>查找字符串在另一字符串中的第一次出现（大小写敏感）。</td>
+</tr>
+<tr>
+<td><a href="func-string-strtok.html">strtok()</a></td>
+<td>把字符串分割为更小的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-strtolower.html">strtolower()</a></td>
+<td>把字符串转换为小写字母。</td>
+</tr>
+<tr>
+<td><a href="func-string-strtoupper.html">strtoupper()</a></td>
+<td>把字符串转换为大写字母。</td>
+</tr>
+<tr>
+<td><a href="func-string-strtr.html">strtr()</a></td>
+<td>转换字符串中特定的字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-substr.html">substr()</a></td>
+<td>返回字符串的一部分。</td>
+</tr>
+<tr>
+<td><a href="func-string-mb_substr.html">mb_substr()</a></td>
+<td>返回中文字符串的一部分。</td>
+</tr>
+<tr>
+<td><a href="func-string-substr-compare.html">substr_compare()</a></td>
+<td>从指定的开始位置（二进制安全和选择性区分大小写）比较两个字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-substr-count.html">substr_count()</a></td>
+<td>计算子串在字符串中出现的次数。</td>
+</tr>
+<tr>
+<td><a href="func-string-substr-replace.html">substr_replace()</a></td>
+<td>把字符串的一部分替换为另一个字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-trim.html">trim()</a></td>
+<td>移除字符串两侧的空白字符和其他字符。</td>
+</tr>
+<tr>
+<td><a href="func-string-ucfirst.html">ucfirst()</a></td>
+<td>把字符串中的首字符转换为大写。</td>
+</tr>
+<tr>
+<td><a href="func-string-ucwords.html">ucwords()</a></td>
+<td>把字符串中每个单词的首字符转换为大写。</td>
+</tr>
+<tr>
+<td><a href="func-string-vfprintf.html">vfprintf()</a></td>
+<td>把格式化的字符串写到指定的输出流。</td>
+</tr>
+<tr>
+<td><a href="func-string-vprintf.html">vprintf()</a></td>
+<td>输出格式化的字符串。</td>
+</tr>
+<tr>
+<td><a href="func-string-vsprintf.html">vsprintf()</a></td>
+<td>把格式化字符串写入变量中。</td>
+</tr>
+<tr>
+<td><a href="func-string-wordwrap.html">wordwrap()</a></td>
+<td>按照指定长度对字符串进行折行处理。</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">小chen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpshujuleixing/">http://example.com/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpshujuleixing/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小chen妙妙屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/php/">php</a></div><div class="post_share"><div class="social-share" data-image="https://api.chenjichao.site/pc/aesthetic/3.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpprinthanshu/" title="php输出函数"><img class="cover" src="https://api.chenjichao.site/pc/aesthetic/1.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">php输出函数</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpbasic/" title="php基础"><img class="cover" src="https://api.chenjichao.site/pc/aesthetic/9.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="title">php基础</div></div></a></div><div><a href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpprinthanshu/" title="php输出函数"><img class="cover" src="https://api.chenjichao.site/pc/aesthetic/1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="title">php输出函数</div></div></a></div><div><a href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/yunsuanfu/" title="php运算符"><img class="cover" src="https://api.chenjichao.site/pc/aesthetic/1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-06</div><div class="title">php运算符</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://image.chenjichao.site/file/81bb6c520407bb11b35c9.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">小chen</div><div class="author-info__description">个人的学习网站，大佬勿喷(#／。＼#)</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">37</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cjc0729"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/cjc0729" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:chenjichao729@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">PHP 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.</span> <span class="toc-text">PHP 字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E6%95%B4%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">PHP 整型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">PHP 浮点型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E5%B8%83%E5%B0%94%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">PHP 布尔型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E6%95%B0%E7%BB%84"><span class="toc-number">1.5.</span> <span class="toc-text">PHP 数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.6.</span> <span class="toc-text">PHP 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-NULL-%E5%80%BC"><span class="toc-number">1.7.</span> <span class="toc-text">PHP NULL 值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E8%B5%84%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.8.</span> <span class="toc-text">PHP 资源类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP-%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="toc-number">2.</span> <span class="toc-text">PHP 类型比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E4%B8%AD-%E6%AF%94%E8%BE%83-0%E3%80%81false%E3%80%81null"><span class="toc-number">2.0.1.</span> <span class="toc-text">PHP中 比较 0、false、null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP-%E5%B8%B8%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">PHP 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">3.1.</span> <span class="toc-text">常量的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E5%B8%B8%E9%87%8F-1"><span class="toc-number">3.2.</span> <span class="toc-text">PHP 常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-PHP-%E5%B8%B8%E9%87%8F"><span class="toc-number">3.3.</span> <span class="toc-text">设置 PHP 常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E6%98%AF%E5%85%A8%E5%B1%80%E7%9A%84"><span class="toc-number">3.4.</span> <span class="toc-text">常量是全局的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-const-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">3.5.</span> <span class="toc-text">使用 const 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F"><span class="toc-number">3.6.</span> <span class="toc-text">预定义常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E6%95%B0%E7%BB%84%EF%BC%88PHP-7-%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC%EF%BC%89"><span class="toc-number">3.7.</span> <span class="toc-text">常量数组（PHP 7 及以上版本）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PHP-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">PHP 字符串变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F"><span class="toc-number">4.1.</span> <span class="toc-text">PHP 中的字符串变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E5%B9%B6%E7%BD%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.2.</span> <span class="toc-text">PHP 并置运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-strlen-%E5%87%BD%E6%95%B0"><span class="toc-number">4.3.</span> <span class="toc-text">PHP strlen() 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-strpos-%E5%87%BD%E6%95%B0"><span class="toc-number">4.4.</span> <span class="toc-text">PHP strpos() 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84-PHP-String-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"><span class="toc-number">4.5.</span> <span class="toc-text">完整的 PHP String 参考手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-5-String-%E5%87%BD%E6%95%B0"><span class="toc-number">4.5.1.</span> <span class="toc-text">PHP 5 String 函数</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpshujuleixing/" title="PHP 数据类型"><img src="https://api.chenjichao.site/pc/aesthetic/3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PHP 数据类型"/></a><div class="content"><a class="title" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpshujuleixing/" title="PHP 数据类型">PHP 数据类型</a><time datetime="2024-08-06T11:15:55.000Z" title="发表于 2024-08-06 19:15:55">2024-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpprinthanshu/" title="php输出函数"><img src="https://api.chenjichao.site/pc/aesthetic/1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="php输出函数"/></a><div class="content"><a class="title" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpprinthanshu/" title="php输出函数">php输出函数</a><time datetime="2024-08-06T08:15:55.000Z" title="发表于 2024-08-06 16:15:55">2024-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/yunsuanfu/" title="php运算符"><img src="https://api.chenjichao.site/pc/aesthetic/1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="php运算符"/></a><div class="content"><a class="title" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/yunsuanfu/" title="php运算符">php运算符</a><time datetime="2024-08-06T08:15:55.000Z" title="发表于 2024-08-06 16:15:55">2024-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpbasic/" title="php基础"><img src="https://api.chenjichao.site/pc/aesthetic/9.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="php基础"/></a><div class="content"><a class="title" href="/2024/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/php/phpbasic/" title="php基础">php基础</a><time datetime="2024-08-06T06:15:55.000Z" title="发表于 2024-08-06 14:15:55">2024-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/17/web%E5%AE%89%E5%85%A8/%E4%BB%A3%E7%A0%81%E6%BC%8F%E6%B4%9E/xss%E8%B7%A8%E7%AB%99%E6%94%BB%E5%87%BB/daima/" title="代码执行与命令执行"><img src="https://api.chenjichao.site/pc/aesthetic/5.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="代码执行与命令执行"/></a><div class="content"><a class="title" href="/2024/07/17/web%E5%AE%89%E5%85%A8/%E4%BB%A3%E7%A0%81%E6%BC%8F%E6%B4%9E/xss%E8%B7%A8%E7%AB%99%E6%94%BB%E5%87%BB/daima/" title="代码执行与命令执行">代码执行与命令执行</a><time datetime="2024-07-17T00:52:26.000Z" title="发表于 2024-07-17 08:52:26">2024-07-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 小chen</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.chenjichao.site/',
+      region: 'ap-shanghai',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.chenjichao.site/',
+      region: 'ap-shanghai',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/jquery.js"></script><script src="/styles/fish.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
